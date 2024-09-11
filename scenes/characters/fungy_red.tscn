@@ -1,0 +1,104 @@
+[gd_scene load_steps=16 format=3 uid="uid://cphj5f2uq1nvm"]
+
+[ext_resource type="Script" path="res://scenes/characters/fungy_red.gd" id="1_3w0sg"]
+[ext_resource type="Texture2D" uid="uid://y1c6jqp66wdn" path="res://assets/sprites/characters/fungy-red/idle.png" id="1_lcvpo"]
+[ext_resource type="Texture2D" uid="uid://dg5vi5ob7w0va" path="res://assets/sprites/characters/fungy-red/jumping.png" id="2_wbwwx"]
+[ext_resource type="Texture2D" uid="uid://b15ly8tosc84r" path="res://assets/sprites/characters/fungy-red/walking.png" id="3_6fjwd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebdfj"]
+atlas = ExtResource("1_lcvpo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob4vo"]
+atlas = ExtResource("1_lcvpo")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgigo"]
+atlas = ExtResource("1_lcvpo")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m37ut"]
+atlas = ExtResource("1_lcvpo")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3rdh"]
+atlas = ExtResource("2_wbwwx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsqq4"]
+atlas = ExtResource("3_6fjwd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq46c"]
+atlas = ExtResource("3_6fjwd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cj7ut"]
+atlas = ExtResource("3_6fjwd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ao7hk"]
+atlas = ExtResource("3_6fjwd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p5l8s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebdfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ob4vo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgigo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m37ut")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3rdh")
+}],
+"loop": true,
+"name": &"jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsqq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hq46c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cj7ut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ao7hk")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsm60"]
+size = Vector2(14, 24)
+
+[node name="FungyRed" type="CharacterBody2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_3w0sg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_p5l8s")
+animation = &"idle"
+frame = 1
+frame_progress = 0.815576
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_jsm60")

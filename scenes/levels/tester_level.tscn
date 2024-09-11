@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca50amebhsja1"]
+
+[ext_resource type="PackedScene" uid="uid://dligtmal2f0tf" path="res://scenes/levels-tiles/level_test.tscn" id="1_m482k"]
+[ext_resource type="PackedScene" uid="uid://cphj5f2uq1nvm" path="res://scenes/characters/fungy_red.tscn" id="2_s8wx0"]
+
+[node name="TesterLevel" type="Node2D"]
+
+[node name="LevelTest" parent="." instance=ExtResource("1_m482k")]
+
+[node name="FungyRed" parent="." instance=ExtResource("2_s8wx0")]
+position = Vector2(68, 68)
+
+[node name="Camera2D" type="Camera2D" parent="FungyRed"]
+limit_left = 0
+limit_top = 0
+limit_right = 576
+limit_bottom = 384
+limit_smoothed = true
