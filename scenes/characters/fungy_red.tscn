@@ -1,9 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://cphj5f2uq1nvm"]
+[gd_scene load_steps=30 format=3 uid="uid://cphj5f2uq1nvm"]
 
 [ext_resource type="Script" path="res://scenes/characters/fungy_red.gd" id="1_3w0sg"]
 [ext_resource type="Texture2D" uid="uid://y1c6jqp66wdn" path="res://assets/sprites/characters/fungy-red/idle.png" id="1_lcvpo"]
 [ext_resource type="Texture2D" uid="uid://dg5vi5ob7w0va" path="res://assets/sprites/characters/fungy-red/jumping.png" id="2_wbwwx"]
 [ext_resource type="Texture2D" uid="uid://b15ly8tosc84r" path="res://assets/sprites/characters/fungy-red/walking.png" id="3_6fjwd"]
+[ext_resource type="Texture2D" uid="uid://cndygrhe7xad4" path="res://assets/sprites/characters/fungy-red/sneaked-idle.png" id="4_ru40w"]
+[ext_resource type="Texture2D" uid="uid://cjdwiasqiovvj" path="res://assets/sprites/characters/fungy-red/sneaked-walking.png" id="5_7gu5m"]
+[ext_resource type="Script" path="res://scenes/characters/fungy_red-scape_detector.gd" id="7_iij0n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g723"]
+atlas = ExtResource("2_wbwwx")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ebdfj"]
 atlas = ExtResource("1_lcvpo")
@@ -25,6 +32,38 @@ region = Rect2(96, 0, 32, 32)
 atlas = ExtResource("2_wbwwx")
 region = Rect2(0, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6q81"]
+atlas = ExtResource("4_ru40w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv5rd"]
+atlas = ExtResource("4_ru40w")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1bg5"]
+atlas = ExtResource("4_ru40w")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuhs0"]
+atlas = ExtResource("4_ru40w")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55tuc"]
+atlas = ExtResource("5_7gu5m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eolcx"]
+atlas = ExtResource("5_7gu5m")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8ldi"]
+atlas = ExtResource("5_7gu5m")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c8ht"]
+atlas = ExtResource("5_7gu5m")
+region = Rect2(96, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qsqq4"]
 atlas = ExtResource("3_6fjwd")
 region = Rect2(0, 0, 32, 32)
@@ -43,6 +82,14 @@ region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p5l8s"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g723")
+}],
+"loop": true,
+"name": &"falling",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ebdfj")
@@ -64,8 +111,42 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b3rdh")
 }],
-"loop": true,
+"loop": false,
 "name": &"jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6q81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv5rd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1bg5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fuhs0")
+}],
+"loop": true,
+"name": &"sneak_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55tuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eolcx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8ldi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c8ht")
+}],
+"loop": true,
+"name": &"sneak_walking",
 "speed": 5.0
 }, {
 "frames": [{
@@ -89,16 +170,41 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jsm60"]
 size = Vector2(14, 24)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wj6y"]
+size = Vector2(14, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjlk6"]
+size = Vector2(14, 5)
+
 [node name="FungyRed" type="CharacterBody2D"]
 scale = Vector2(1.5, 1.5)
+collision_mask = 3
 script = ExtResource("1_3w0sg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p5l8s")
 animation = &"idle"
-frame = 1
-frame_progress = 0.815576
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="NormalCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_jsm60")
+
+[node name="SneakedCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_1wj6y")
+disabled = true
+
+[node name="Umbral" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Umbral"]
+position = Vector2(0, -8.5)
+shape = SubResource("RectangleShape2D_bjlk6")
+
+[node name="ScapeDetector" type="Area2D" parent="."]
+collision_mask = 8
+script = ExtResource("7_iij0n")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="ScapeDetector"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_1wj6y")

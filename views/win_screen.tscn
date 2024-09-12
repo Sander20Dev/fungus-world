@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://blf8ccwplw02e"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Label" type="RichTextLabel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 130.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[center][color=#9e662e][font=res://assets/fonts/pixelify_sans.ttf][font_size=96]YOU [shake rate=20.0 level=10 connected=1]WIN!"
+scroll_active = false
