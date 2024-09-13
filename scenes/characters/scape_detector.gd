@@ -1,10 +1,11 @@
 extends Area2D
 
 var can_escape = false
-@onready var player: FungyRed = self.owner
+
+@onready var player: Fungy = self.owner
 
 func _process(delta: float):
-	if not player.really_can_exit: return
+	if not player.can_exit: return
 	
 	can_escape = has_overlapping_areas()
 	

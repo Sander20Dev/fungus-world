@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cndygrhe7xad4"
-path="res://.godot/imported/sneaked-idle.png-a03e23d872e8758ee95f15a37702b601.ctex"
+uid="uid://cjdwiasqiovvj"
+path="res://.godot/imported/sneaking.png-a1c3131131888b0b82ceb7fb5fcc3697.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/fungy-red/sneaked-idle.png"
-dest_files=["res://.godot/imported/sneaked-idle.png-a03e23d872e8758ee95f15a37702b601.ctex"]
+source_file="res://assets/sprites/characters/fungy-red/sneaking.png"
+dest_files=["res://.godot/imported/sneaking.png-a1c3131131888b0b82ceb7fb5fcc3697.ctex"]
 
 [params]
 
