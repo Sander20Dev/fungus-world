@@ -58,7 +58,7 @@
 
 ## Licencia
 
-Este proyecto aún no cuenta con licencia, por lo que está libre a ser modificado, copiado o vendido.
+Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
 
 ## Secciones que puedes personalizar:
 
