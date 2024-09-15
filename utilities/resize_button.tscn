@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfioym26vahtk"]
+
+[ext_resource type="Texture2D" uid="uid://dr56q684tqamt" path="res://assets/sprites/utilities/resize-button.png" id="1_avh01"]
+[ext_resource type="Script" path="res://utilities/resize_button.gd" id="1_y6pme"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qju4x"]
+size = Vector2(17, 5)
+
+[node name="ResizeButton" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_y6pme")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_avh01")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 11.5)
+shape = SubResource("RectangleShape2D_qju4x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
