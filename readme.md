@@ -34,33 +34,3 @@
    ```bash
    git clone https://github.com/Sander20Dev/fungus-world.git
    ```
-2. Abre el proyecto en **Godot Engine** (versión mínima recomendada: 4.x).
-3. Ejecuta el proyecto desde el editor.
-
-## Controles
-
-- **AD**: Mover al personaje.
-- **W**: Saltar.
-- **S**: Agacharse.
-- **Click izquierdo**: Disparar (cuando la mecánica esté habilitada).
-
-## Roadmap
-
-- [x] Implementación de movimiento básico (caminar, saltar, agacharse).
-- [x] Diseño de niveles y estructura de subniveles.
-- [ ] Integración de mecánicas adicionales (Redimensionar objetos, disparos, plataformas móviles, etc.).
-- [ ] Desarrollo de enemigos y obstáculos dinámicos.
-- [ ] Pulido visual y efectos.
-
-## Contribuciones
-
-¡Contribuciones, ideas y sugerencias son bienvenidas! Por favor, abre un **issue** para reportar bugs o proponer mejoras.
-
-## Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
-
-## Secciones que puedes personalizar:
-
-- **Diseño de los TILESETS:** Tiene la libertad de modificar el TILESET a voluntad y colaborar con el juego mandando sus propios diseños. [Dibuja tus TILES](https://tile-set-preference.vercel.app/)
-- **Mecánicas adicionales:** Mediante **issues** puede solicitar y ayudar a idear nuevas mecánicas para el juego.

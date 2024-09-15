@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=4 uid="uid://ba0edw4ffqirw"]
+
+[ext_resource type="Texture2D" uid="uid://bhadu0mb2efcn" path="res://assets/sprites/tilesets/general.png" id="1_8jnb7"]
+[ext_resource type="PackedScene" uid="uid://cjv44kvylp6da" path="res://utilities/killer.tscn" id="2_lf8m7"]
+[ext_resource type="PackedScene" uid="uid://falnw41lsu7e" path="res://utilities/door.tscn" id="3_ddsoy"]
+[ext_resource type="PackedScene" uid="uid://bgom2ohnp8qvy" path="res://utilities/key.tscn" id="4_ho8n5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8yxev"]
+texture = ExtResource("1_8jnb7")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, 0, -16, 0)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 0, -16, 0)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1fiuj"]
+scenes/1/scene = ExtResource("2_lf8m7")
+
+[sub_resource type="TileSet" id="TileSet_rqdq1"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_8yxev")
+sources/3 = SubResource("TileSetScenesCollectionSource_1fiuj")
+
+[node name="LevelLukLevel" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAcAAAAAAAEAAAAAAAgAAAAAAAEAAAAAAAkAAAAAAAEAAAAAAAoAAAAAAAEAAAAAAAsAAAAAAAEAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAjAAoAAAAAAAEAAAAjAAsAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAwAAwAAAAAAAQABAAwAAwAAAAAAAQACAAwAAwAAAAAAAQADAAwAAwAAAAAAAQAEAAwAAwAAAAAAAQARAAwAAwAAAAAAAQASAAwAAwAAAAAAAQAjAAkAAAAAAAEAAAAjAAgAAAAAAAEAAAAjAAcAAAAAAAEAAAAjAAYAAAAAAAEAAAAjAAUAAAAAAAEAAAAjAAQAAAAAAAEAAAAjAAMAAAAAAAEAAAAjAAIAAAAAAAEAAAAjAAEAAAAAAAEAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAAaAAAAAAAAAAAAAAAbAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAdAAAAAAAAAAAAAAAeAAAAAAAAAAAAAAAfAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAhAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAAjAAAAAAAAAAAAAAAFAAwAAwAAAAAAAQAGAAwAAwAAAAAAAQAHAAwAAwAAAAAAAQAIAAwAAwAAAAAAAQAJAAwAAwAAAAAAAQAKAAwAAwAAAAAAAQALAAwAAwAAAAAAAQAMAAwAAwAAAAAAAQANAAwAAwAAAAAAAQAOAAwAAwAAAAAAAQAPAAwAAwAAAAAAAQAQAAwAAwAAAAAAAQATAAwAAwAAAAAAAQAUAAwAAwAAAAAAAQAVAAwAAwAAAAAAAQAWAAwAAwAAAAAAAQAXAAwAAwAAAAAAAQAYAAwAAwAAAAAAAQAZAAwAAwAAAAAAAQAaAAwAAwAAAAAAAQAbAAwAAwAAAAAAAQAcAAwAAwAAAAAAAQAdAAwAAwAAAAAAAQAeAAwAAwAAAAAAAQAfAAwAAwAAAAAAAQAgAAwAAwAAAAAAAQAhAAwAAwAAAAAAAQAiAAwAAwAAAAAAAQAjAAwAAwAAAAAAAQA=")
+tile_set = SubResource("TileSet_rqdq1")
+
+[node name="Door" parent="." instance=ExtResource("3_ddsoy")]
+position = Vector2(1055, 288)
+
+[node name="Key" parent="." node_paths=PackedStringArray("door") instance=ExtResource("4_ho8n5")]
+position = Vector2(937, 107)
+door = NodePath("../Door")
