@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjv44kvylp6da"]
+
+[ext_resource type="Script" path="res://utilities/killer.gd" id="1_42ab0"]
+[ext_resource type="Texture2D" uid="uid://db2ubisact83l" path="res://assets/sprites/utilities/killer.png" id="1_d84ev"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gloy1"]
+size = Vector2(32, 32)
+
+[node name="Killer" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_42ab0")
+
+[node name="Killer" type="Sprite2D" parent="."]
+texture = ExtResource("1_d84ev")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gloy1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
