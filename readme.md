@@ -1,7 +1,7 @@
 # Fungus World
 
-![Gameplay ScreenShoot 1](./images/image1.png)
-![Gameplay ScreenShoot 2](./images/image2.png)
+![Gameplay ScreenShoot Picture 1](./images/image1.png)
+![Gameplay ScreenShoot Picture 2](./images/image2.png)
 
 ## Descripción
 
@@ -62,5 +62,5 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para
 
 ## Secciones que puedes personalizar:
 
-- **Diseño de los TILESETS:** Tiene la libertad de modificar el TILESET a voluntad y colaborar con el juego mandando sus propios diseños. [Dibuja tus TILES](https://tile-set-preference.vercel.app/)
+- **Diseño de los TILESETS:** Tiene la libertad de modificar el TILESET a voluntad y colaborar con el juego mandando sus propios diseños.
 - **Mecánicas adicionales:** Mediante **issues** puede solicitar y ayudar a idear nuevas mecánicas para el juego.
