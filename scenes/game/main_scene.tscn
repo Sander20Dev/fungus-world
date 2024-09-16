@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbqb5wiqrmafq"]
+
+[ext_resource type="Script" path="res://scenes/game/main_scene.gd" id="1_bxdsg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kmdhi"]
+font_size = 72
+font_color = Color(0.6, 0.878431, 0.462745, 1)
+outline_size = 8
+outline_color = Color(0.356863, 0.752941, 0.188235, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_dyer8"]
+device = -1
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_eygcp"]
+events = [SubResource("InputEventKey_dyer8")]
+
+[node name="MainScene" type="CanvasLayer"]
+script = ExtResource("1_bxdsg")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -100.0
+offset_right = 233.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Fungus World"
+label_settings = SubResource("LabelSettings_kmdhi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = 21.0
+offset_right = 70.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+shortcut = SubResource("Shortcut_eygcp")
+text = "PLAY"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://wo1syx35q87j"]
+
+[ext_resource type="PackedScene" uid="uid://clmdf88oc7a8r" path="res://scenes/playable-levels/level1/designs/level_1_1_design.tscn" id="1_xn6kb"]
+[ext_resource type="PackedScene" uid="uid://ch6uqin66i1v7" path="res://scenes/characters/fungy.tscn" id="2_qqvl6"]
+[ext_resource type="PackedScene" uid="uid://dbmmns6td4imf" path="res://utilities/main_camera.tscn" id="3_os220"]
+
+[node name="Level 1_1" type="Node2D"]
+
+[node name="Level 1_1 design" parent="." instance=ExtResource("1_xn6kb")]
+
+[node name="ADText" type="RichTextLabel" parent="."]
+offset_left = 65.0
+offset_top = 368.0
+offset_right = 305.0
+offset_bottom = 391.0
+bbcode_enabled = true
+text = "[color=#000]Presiona [A] o [D] para caminar"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="WText" type="RichTextLabel" parent="."]
+offset_left = 304.0
+offset_top = 168.0
+offset_right = 481.0
+offset_bottom = 191.0
+bbcode_enabled = true
+text = "[color=#000]Pulsa [W] para saltar"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="SText" type="RichTextLabel" parent="."]
+offset_left = 475.0
+offset_top = 309.0
+offset_right = 662.0
+offset_bottom = 332.0
+bbcode_enabled = true
+text = "[color=#000]Pulsa [S] para agacharte"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="KeyText" type="RichTextLabel" parent="."]
+offset_left = 1176.0
+offset_top = 46.0
+offset_right = 1278.0
+offset_bottom = 69.0
+bbcode_enabled = true
+text = "[color=#000]Toma la llave"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="DoorText" type="RichTextLabel" parent="."]
+offset_left = 1594.0
+offset_top = 282.0
+offset_right = 1778.0
+offset_bottom = 305.0
+bbcode_enabled = true
+text = "[color=#000]Presiona [S] para entrar"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Fungy" parent="." instance=ExtResource("2_qqvl6")]
+position = Vector2(50, 376)
+
+[node name="MainCamera" parent="." node_paths=PackedStringArray("node_to_follow") instance=ExtResource("3_os220")]
+position = Vector2(254, 207)
+node_to_follow = NodePath("../Fungy")
+origin_by_tiles = Vector2(0, -1)
+size_by_tiles = Vector2(57, 15)

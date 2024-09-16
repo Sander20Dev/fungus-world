@@ -1,15 +1,27 @@
+@tool
+
 class_name MainCamera
 extends Camera2D
 
 @export_category("Camera Position")
 @export var node_to_follow: Node2D
-@export var count_of_tiles = Vector2()
+@export var origin_by_tiles = Vector2() :
+	set(val):
+		origin_by_tiles = val
+		limit_top = origin_by_tiles.y * 32
+		limit_left = origin_by_tiles.x * 32
+		limit_bottom = origin_by_tiles.y * 32 + size_by_tiles.y * 32
+		limit_right = origin_by_tiles.x * 32 + size_by_tiles.x * 32
+
+@export var size_by_tiles = Vector2(12, 18) :
+	set(val):
+		size_by_tiles = val
+		limit_bottom = origin_by_tiles.y * 32 + size_by_tiles.y * 32
+		limit_right = origin_by_tiles.x * 32 + size_by_tiles.x * 32
+		
 
 func _ready():
-	limit_left = 0
-	limit_top = 0
+	position = node_to_follow.position
 
 func _process(delta: float) -> void:
 	position = node_to_follow.position
-	limit_right = count_of_tiles.x * 32
-	limit_bottom = count_of_tiles.y * 32

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Fungus World"
-run/main_scene="res://scenes/levels/tester_level.tscn"
+run/main_scene="res://scenes/game/main_scene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 window/size/viewport_height=768
 window/stretch/scale=2.0
+
+[gui]
+
+theme/custom_font="res://assets/fonts/pixelify_sans.ttf"
 
 [input]
 
@@ -53,4 +57,4 @@ red_sneak={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-environment/defaults/default_clear_color=Color(1, 0.823529, 0.643137, 1)
+environment/defaults/default_clear_color=Color(0.945098, 0.984314, 0.917647, 1)

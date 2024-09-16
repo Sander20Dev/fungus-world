@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnx48i8dbni3v"]
+
+[ext_resource type="PackedScene" uid="uid://n2h8h2c2kqab" path="res://scenes/playable-levels/level1/designs/level_1_2_design.tscn" id="1_isaxk"]
+[ext_resource type="PackedScene" uid="uid://ch6uqin66i1v7" path="res://scenes/characters/fungy.tscn" id="2_fcmmq"]
+[ext_resource type="PackedScene" uid="uid://dbmmns6td4imf" path="res://utilities/main_camera.tscn" id="3_u22f6"]
+[ext_resource type="PackedScene" uid="uid://d1ym5poajs1qg" path="res://utilities/detector_killer.tscn" id="4_axkqq"]
+
+[node name="Level 1_2" type="Node2D"]
+
+[node name="Level 1_2 Design" parent="." instance=ExtResource("1_isaxk")]
+
+[node name="Fungy" parent="." instance=ExtResource("2_fcmmq")]
+position = Vector2(55, 95)
+
+[node name="MainCamera" parent="." node_paths=PackedStringArray("node_to_follow") instance=ExtResource("3_u22f6")]
+position = Vector2(55, 95)
+scale = Vector2(1.5, 1.5)
+limit_left = 0
+limit_top = -32
+limit_right = 1824
+limit_bottom = 448
+node_to_follow = NodePath("../Fungy")
+origin_by_tiles = Vector2(0, -1)
+size_by_tiles = Vector2(57, 15)
+
+[node name="DetectorKiller" parent="." instance=ExtResource("4_axkqq")]
+position = Vector2(244, 459)
