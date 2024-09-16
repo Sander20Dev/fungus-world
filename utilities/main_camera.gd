@@ -21,7 +21,9 @@ extends Camera2D
 		
 
 func _ready():
-	position = node_to_follow.position
+	if node_to_follow:
+		position = node_to_follow.position
 
 func _process(delta: float) -> void:
-	position = node_to_follow.position
+	if node_to_follow:
+		position = node_to_follow.position

@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://cvkie5n1r1tpe" path="res://presets/tilesets/terrain.tres" id="1_t8lev"]
 [ext_resource type="PackedScene" uid="uid://falnw41lsu7e" path="res://utilities/door.tscn" id="2_njqnu"]
-[ext_resource type="PackedScene" uid="uid://cnx48i8dbni3v" path="res://scenes/playable-levels/level1/level_1_2.tscn" id="3_41xbu"]
+[ext_resource type="PackedScene" uid="uid://d0iv1jny87wfj" path="res://scenes/playable-levels/level1/level_1_2.tscn" id="3_41xbu"]
 [ext_resource type="PackedScene" uid="uid://bgom2ohnp8qvy" path="res://utilities/key.tscn" id="3_bhq88"]
 
 [node name="Level 1_1 design" type="Node2D"]

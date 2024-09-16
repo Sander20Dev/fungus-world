@@ -1,27 +1,91 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnx48i8dbni3v"]
+[gd_scene load_steps=8 format=4 uid="uid://d0iv1jny87wfj"]
 
-[ext_resource type="PackedScene" uid="uid://n2h8h2c2kqab" path="res://scenes/playable-levels/level1/designs/level_1_2_design.tscn" id="1_isaxk"]
+[ext_resource type="TileSet" uid="uid://cvkie5n1r1tpe" path="res://presets/tilesets/terrain.tres" id="1_r6jt5"]
 [ext_resource type="PackedScene" uid="uid://ch6uqin66i1v7" path="res://scenes/characters/fungy.tscn" id="2_fcmmq"]
+[ext_resource type="PackedScene" uid="uid://bgom2ohnp8qvy" path="res://utilities/key.tscn" id="2_yry6u"]
+[ext_resource type="PackedScene" uid="uid://falnw41lsu7e" path="res://utilities/door.tscn" id="3_g6c2e"]
 [ext_resource type="PackedScene" uid="uid://dbmmns6td4imf" path="res://utilities/main_camera.tscn" id="3_u22f6"]
 [ext_resource type="PackedScene" uid="uid://d1ym5poajs1qg" path="res://utilities/detector_killer.tscn" id="4_axkqq"]
+[ext_resource type="PackedScene" uid="uid://cnx48i8dbni3v" path="res://scenes/playable-levels/level1/level_1_3.tscn" id="4_vlw7s"]
 
-[node name="Level 1_2" type="Node2D"]
+[node name="level 1_2" type="Node2D"]
 
-[node name="Level 1_2 Design" parent="." instance=ExtResource("1_isaxk")]
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAIAAAABAAMAAAABAAIAAAACAAMAAAACAAIAAAADAAMAAAAFAAMAAAAAAAMAAAAHAAUAAAAAAAMAAAAIAAgAAAAAAAMAAAAIAAMAAAAAAAIAAAAIAAIAAAAAAAEAAAAIAAEAAAAAAAEAAAAIAAAAAAAAAAEAAAAIAP//AAAAAAEAAAAIAP7/AAABAAEAAAAKAAcAAAAAAAMAAAAMAAYAAAABAAMAAAANAAYAAAADAAMAAAAQAAUAAAABAAMAAAARAAUAAAADAAMAAAAWAAQAAAAAAAAAAAAYAAMAAAAAAAIAAAAYAAIAAAAAAAAAAAAbAAQAAAAAAAMAAAAeAAIAAAABAAMAAAAfAAIAAAACAAAAAAAgAAIAAAACAAAAAAAhAAIAAAADAAMAAAAfAAMAAAABAAIAAAAgAAMAAAADAAIAAAAJAP7/AAACAAMAAAAKAP7/AAACAAMAAAALAP7/AAACAAMAAAAMAP7/AAADAAMAAAASAAEAAAABAAMAAAATAAEAAAADAAMAAAAPAAAAAAABAAMAAAAQAAAAAAADAAMAAAAFAP3/AAABAAMAAAAGAP3/AAACAAMAAAAHAP3/AAACAAMAAAAIAP3/AAADAAAAAAACAPv/AAAAAAMAAAD///n/AAAAAAMAAAD2//v/AAACAAAAAAD3//v/AAACAAAAAAD4//v/AAADAAMAAAD1//v/AAABAAMAAAD2//z/AAABAAIAAAD3//z/AAADAAIAAAAVAAUAAAABAAMAAAAWAAUAAAADAAIAAAD6//n/AAAAAAMAAAD3/wUAAAABAAAAAAD3/wYAAAAAAAEAAAD3/wcAAAAAAAEAAAD3/wgAAAAAAAEAAAD4/wUAAAACAAMAAAD5/wUAAAACAAMAAAD6/wUAAAACAAMAAAD7/wUAAAACAAMAAAD8/wUAAAADAAAAAAD8/wYAAAAAAAEAAAD8/wcAAAADAAEAAAD8/wgAAAAAAAEAAAD3/wkAAAABAAIAAAD4/wkAAAACAAMAAAD5/wkAAAACAAMAAAD6/wkAAAACAAMAAAD7/wkAAAACAAMAAAD8/wkAAAADAAIAAAD7/wcAAAABAAMAAAD5/wcAAAAAAAMAAAA=")
+tile_set = ExtResource("1_r6jt5")
 
-[node name="Fungy" parent="." instance=ExtResource("2_fcmmq")]
-position = Vector2(55, 95)
+[node name="ADText" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = 138.0
+offset_right = 175.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[color=#000]Evita caer. Salta bien."
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="ADText2" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -401.0
+offset_top = -266.0
+offset_right = -179.0
+offset_bottom = -243.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[color=#000]Toma la llave y ve a la puerta"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="ADText3" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 974.0
+offset_top = 65.0
+offset_right = 1076.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[color=#000]Busca la llave"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Key" parent="." instance=ExtResource("2_yry6u")]
+position = Vector2(-292, -193)
+
+[node name="Door" parent="." instance=ExtResource("3_g6c2e")]
+position = Vector2(1022, 32)
+scene_after_to_win = ExtResource("4_vlw7s")
 
 [node name="MainCamera" parent="." node_paths=PackedStringArray("node_to_follow") instance=ExtResource("3_u22f6")]
-position = Vector2(55, 95)
-scale = Vector2(1.5, 1.5)
-limit_left = 0
-limit_top = -32
-limit_right = 1824
-limit_bottom = 448
+position = Vector2(40, 44)
+limit_left = -416
+limit_top = -384
+limit_right = 1120
 node_to_follow = NodePath("../Fungy")
-origin_by_tiles = Vector2(0, -1)
-size_by_tiles = Vector2(57, 15)
+origin_by_tiles = Vector2(-13, -12)
+size_by_tiles = Vector2(48, 24)
 
 [node name="DetectorKiller" parent="." instance=ExtResource("4_axkqq")]
-position = Vector2(244, 459)
+position = Vector2(-418, 366)
+
+[node name="Fungy" parent="." instance=ExtResource("2_fcmmq")]
+position = Vector2(40, 44)
