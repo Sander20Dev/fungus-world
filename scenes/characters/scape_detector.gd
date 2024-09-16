@@ -9,7 +9,7 @@ func _process(delta: float):
 	
 	can_escape = has_overlapping_areas()
 	
-	if can_escape and Input.is_action_just_pressed("red_sneak"):
+	if can_escape and Input.is_action_just_pressed("p1_sneak"):
 		if player.escaped:
 			player.show()
 		else:

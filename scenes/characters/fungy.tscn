@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ch6uqin66i1v7"]
+[gd_scene load_steps=33 format=3 uid="uid://ch6uqin66i1v7"]
 
 [ext_resource type="Script" path="res://scenes/characters/fungy/fungy.gd" id="1_lypfv"]
 [ext_resource type="Texture2D" uid="uid://y1c6jqp66wdn" path="res://assets/sprites/characters/fungy-red/idle.png" id="2_apmbr"]
@@ -10,11 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://ds4h1vu36ga7i" path="res://assets/sprites/characters/fungy-red/falling.png" id="7_fktj5"]
 [ext_resource type="Script" path="res://scenes/characters/fungy/movement_state/idle.gd" id="7_p1dxy"]
 [ext_resource type="Script" path="res://scenes/characters/fungy/movement_state/walking.gd" id="8_28amc"]
+[ext_resource type="Texture2D" uid="uid://bwmcpvplc54jk" path="res://assets/sprites/characters/fungy-red/sneaking_jump.png" id="8_nowlo"]
+[ext_resource type="Texture2D" uid="uid://bq0t45cwyqfxh" path="res://assets/sprites/characters/fungy-red/sneaking_fall.png" id="9_buvyi"]
 [ext_resource type="Script" path="res://scenes/characters/fungy/movement_state/sneaking_idle.gd" id="9_mhnxl"]
 [ext_resource type="Script" path="res://scenes/characters/fungy/movement_state/sneaking.gd" id="10_1m3au"]
 [ext_resource type="Script" path="res://scenes/characters/fungy/movement_state/jumping.gd" id="11_jf4vq"]
 [ext_resource type="Script" path="res://scenes/characters/fungy/movement_state/falling.gd" id="14_jtwtk"]
 [ext_resource type="Script" path="res://scenes/characters/scape_detector.gd" id="15_exflm"]
+[ext_resource type="Script" path="res://scenes/characters/fungy/movement_state/sneaking_fall.gd" id="17_fkpfj"]
+[ext_resource type="Script" path="res://scenes/characters/fungy/movement_state/sneaking_jump.gd" id="18_yvbos"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3733s"]
 size = Vector2(8, 24)
@@ -43,7 +47,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [4]
+"values": [1]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -84,7 +88,8 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_lul23"]
 resource_name = "falling"
-step = 0.25
+length = 0.5
+step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -140,7 +145,7 @@ tracks/4/path = NodePath("Sprite2D:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
@@ -157,10 +162,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2, 3]
+"values": [0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -184,7 +189,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [4]
+"values": [1]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -213,7 +218,8 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_oge0s"]
 resource_name = "jumping"
-step = 0.25
+length = 0.2
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -257,10 +263,10 @@ tracks/3/path = NodePath("Sprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2]
+"values": [0, 1, 2, 3]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -313,7 +319,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [4]
+"values": [1]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -322,10 +328,10 @@ tracks/3/path = NodePath("Sprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2, 3]
+"values": [0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -470,6 +476,136 @@ tracks/4/keys = {
 "values": [Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_v1h0m"]
+resource_name = "sneaking_jump"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_nowlo")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape2D:shape:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, 18)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 2.5)]
+}
+
+[sub_resource type="Animation" id="Animation_xmie1"]
+resource_name = "sneaking_fall"
+length = 0.5
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:shape:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, 18)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 2.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_buvyi")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 3]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sfq7t"]
 _data = {
 "RESET": SubResource("Animation_gqjs0"),
@@ -478,6 +614,8 @@ _data = {
 "jumping": SubResource("Animation_oge0s"),
 "sneak_idle": SubResource("Animation_2j0ji"),
 "sneaking": SubResource("Animation_26cmh"),
+"sneaking_fall": SubResource("Animation_xmie1"),
+"sneaking_jump": SubResource("Animation_v1h0m"),
 "walking": SubResource("Animation_asexg")
 }
 
@@ -495,7 +633,6 @@ script = ExtResource("1_lypfv")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -1)
 texture = ExtResource("2_apmbr")
-hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3733s")
@@ -525,6 +662,12 @@ script = ExtResource("11_jf4vq")
 
 [node name="Falling" type="Node" parent="StateMachine"]
 script = ExtResource("14_jtwtk")
+
+[node name="SneakingFall" type="Node" parent="StateMachine"]
+script = ExtResource("17_fkpfj")
+
+[node name="SneakingJump" type="Node" parent="StateMachine"]
+script = ExtResource("18_yvbos")
 
 [node name="Umbral" type="Area2D" parent="."]
 collision_mask = 2
