@@ -1,7 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgom2ohnp8qvy"]
+[gd_scene load_steps=8 format=3 uid="uid://bgom2ohnp8qvy"]
 
 [ext_resource type="Texture2D" uid="uid://dsgv7h8p6lo58" path="res://assets/sprites/utilities/key.png" id="1_eeh2p"]
 [ext_resource type="Script" path="res://utilities/key.gd" id="1_xe8g4"]
+[ext_resource type="AudioStream" uid="uid://bbcso17w5alv0" path="res://assets/audios/sfx/key-catch.wav" id="3_afunr"]
+
+[sub_resource type="Animation" id="Animation_8t88j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_ovwyj"]
 resource_name = "idle"
@@ -19,21 +35,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 4), Vector2(0, -4), Vector2(0, 4)]
-}
-
-[sub_resource type="Animation" id="Animation_8t88j"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ma5cn"]
@@ -60,4 +61,13 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_yd4y5")
 
+[node name="KeyCatch" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_afunr")
+volume_db = 15.0
+pitch_scale = 1.25
+
+[node name="TimerKill" type="Timer" parent="."]
+wait_time = 0.96
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="TimerKill" to="." method="_on_timer_timeout"]

@@ -1,4 +1,5 @@
 extends PlayerStateBase
+@onready var step: AudioStreamPlayer2D = $"../../Step"
 
 func start():
 	player.animation_player.play(player.fungy_constants.ANIMATION_FALLING)
@@ -9,7 +10,8 @@ func on_physics_process(delta):
 	
 	if direction: player.sprite.flip_h = direction < 0
 	
-	if player.velocity.y >= 0 and player.is_on_floor(): 
+	if player.velocity.y >= 0 and player.is_on_floor():
+		step.play()
 		state_machine.change_to("Idle" if direction == 0 else "Walking")
 	
 	_inputs()

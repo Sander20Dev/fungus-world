@@ -6,6 +6,8 @@ var fungy_constants = FungyConstants.new()
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var umbral: Area2D = $Umbral
 
+signal reset_player()
+
 var can_exit = false
 var escaped = false
 func allow_exit():
@@ -13,3 +15,6 @@ func allow_exit():
 
 func _ready():
 	Global.players[0] = self
+
+func reset():
+	reset_player.emit()

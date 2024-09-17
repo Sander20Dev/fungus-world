@@ -15,3 +15,9 @@ func _process(delta: float):
 		else:
 			player.hide()
 		player.escaped = not player.escaped
+
+
+func _reset() -> void:
+	can_escape = false
+	player.escaped = false
+	player.show()

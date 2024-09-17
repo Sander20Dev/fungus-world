@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=4 uid="uid://gj0lwmnptbk8"]
+
+[ext_resource type="TileSet" uid="uid://cvkie5n1r1tpe" path="res://presets/tilesets/terrain.tres" id="1_t447j"]
+[ext_resource type="PackedScene" uid="uid://falnw41lsu7e" path="res://utilities/door.tscn" id="2_g8t7j"]
+[ext_resource type="PackedScene" uid="uid://bgom2ohnp8qvy" path="res://utilities/key.tscn" id="3_0c0tn"]
+[ext_resource type="PackedScene" uid="uid://ch6uqin66i1v7" path="res://scenes/characters/fungy.tscn" id="4_w63q0"]
+
+[node name="Testing" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAOAAAAAAAAAAAAAAAOAAEAAAAAAAEAAAAOAAIAAAAAAAEAAAAOAAMAAAAAAAEAAAAOAAQAAAADAAIAAAANAAQAAAACAAMAAAAMAAQAAAACAAMAAAALAAQAAAACAAMAAAAKAAQAAAACAAMAAAAJAAQAAAACAAMAAAAAAAQAAAABAAIAAAABAAQAAAACAAMAAAACAAQAAAACAAMAAAAEAAQAAAACAAMAAAADAAQAAAACAAMAAAAFAAQAAAACAAMAAAAGAAQAAAACAAMAAAAHAAQAAAACAAMAAAAIAAQAAAACAAMAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAA=")
+tile_set = ExtResource("1_t447j")
+
+[node name="Door" parent="." instance=ExtResource("2_g8t7j")]
+position = Vector2(410, 98)
+
+[node name="Key" parent="." node_paths=PackedStringArray("door") instance=ExtResource("3_0c0tn")]
+position = Vector2(232, 80)
+door = NodePath("../Door")
+
+[node name="Fungy" parent="." instance=ExtResource("4_w63q0")]
+position = Vector2(67, 98)

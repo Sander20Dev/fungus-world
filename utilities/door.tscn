@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://falnw41lsu7e"]
+[gd_scene load_steps=5 format=3 uid="uid://falnw41lsu7e"]
 
 [ext_resource type="Texture2D" uid="uid://cd7ii7sojw6hy" path="res://assets/sprites/utilities/door.png" id="1_bebrv"]
 [ext_resource type="Script" path="res://utilities/door.gd" id="1_c3aru"]
+[ext_resource type="AudioStream" uid="uid://dxecrj3on0lgw" path="res://assets/audios/sfx/door-opening.wav" id="3_k5nig"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awy7p"]
 size = Vector2(20, 28)
@@ -18,3 +19,7 @@ hframes = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_awy7p")
+
+[node name="DoorOpening" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_k5nig")
+pitch_scale = 2.0

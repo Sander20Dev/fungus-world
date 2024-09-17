@@ -1,6 +1,8 @@
 extends PlayerStateBase
+@onready var jump: AudioStreamPlayer2D = $"../../Jump"
 
 func start():
+	jump.play()
 	player.animation_player.play(player.fungy_constants.ANIMATION_SNEAKING_JUMP)
 
 func on_physics_process(delta):
