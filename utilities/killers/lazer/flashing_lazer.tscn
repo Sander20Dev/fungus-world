@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccylx4ugf81hn"]
+
+[ext_resource type="Script" path="res://utilities/killers/lazer/flashing_lazer.gd" id="1_0bn7q"]
+
+[node name="FlashingLazer" type="Node2D"]
+script = ExtResource("1_0bn7q")
+lazers_count = 10
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

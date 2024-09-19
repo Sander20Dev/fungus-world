@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=4 uid="uid://catwxcsxi3ekw"]
 
-[ext_resource type="Script" path="res://scenes/playable-levels/level1/scripts/level.gd" id="1_2sf3w"]
+[ext_resource type="Script" path="res://scenes/playable-levels/scripts/level.gd" id="1_2sf3w"]
 [ext_resource type="TileSet" uid="uid://cvkie5n1r1tpe" path="res://presets/tilesets/terrain.tres" id="2_0eyg6"]
-[ext_resource type="PackedScene" uid="uid://bgom2ohnp8qvy" path="res://utilities/key.tscn" id="3_lg6b8"]
-[ext_resource type="PackedScene" uid="uid://falnw41lsu7e" path="res://utilities/door.tscn" id="4_0i8va"]
-[ext_resource type="PackedScene" uid="uid://d1ym5poajs1qg" path="res://utilities/detector_killer.tscn" id="6_0depk"]
+[ext_resource type="PackedScene" uid="uid://bgom2ohnp8qvy" path="res://utilities/actives/key.tscn" id="3_lg6b8"]
+[ext_resource type="PackedScene" uid="uid://falnw41lsu7e" path="res://utilities/scape_options/door.tscn" id="4_0i8va"]
+[ext_resource type="PackedScene" uid="uid://d1ym5poajs1qg" path="res://utilities/killers/detector_killer.tscn" id="6_0depk"]
 
 [node name="Lvl2" type="Node2D" node_paths=PackedStringArray("player_spawn_node")]
 script = ExtResource("1_2sf3w")
@@ -13,7 +13,10 @@ level = 2
 origin = Vector2(-13, -12)
 size = Vector2(48, 24)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="Colorize" type="Node2D" parent="."]
+modulate = Color(0.6, 0.878431, 0.462745, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Colorize"]
 tile_map_data = PackedByteArray("AAAAAAIAAAABAAMAAAABAAIAAAACAAMAAAACAAIAAAADAAMAAAAFAAMAAAAAAAMAAAAHAAUAAAAAAAMAAAAIAAgAAAAAAAMAAAAIAAMAAAAAAAIAAAAIAAIAAAAAAAEAAAAIAAEAAAAAAAEAAAAIAAAAAAAAAAEAAAAIAP//AAAAAAEAAAAIAP7/AAABAAEAAAAKAAcAAAAAAAMAAAAMAAYAAAABAAMAAAANAAYAAAADAAMAAAAQAAUAAAABAAMAAAARAAUAAAADAAMAAAAWAAQAAAAAAAAAAAAYAAMAAAAAAAIAAAAYAAIAAAAAAAAAAAAbAAQAAAAAAAMAAAAeAAIAAAABAAMAAAAfAAIAAAACAAAAAAAgAAIAAAACAAAAAAAhAAIAAAADAAMAAAAfAAMAAAABAAIAAAAgAAMAAAADAAIAAAAJAP7/AAACAAMAAAAKAP7/AAACAAMAAAALAP7/AAACAAMAAAAMAP7/AAADAAMAAAAPAAAAAAABAAMAAAAQAAAAAAADAAMAAAAFAP3/AAABAAMAAAAGAP3/AAACAAMAAAAHAP3/AAACAAMAAAAIAP3/AAADAAAAAAACAPv/AAAAAAMAAAD///n/AAAAAAMAAAD2//v/AAACAAAAAAD3//v/AAACAAAAAAD4//v/AAADAAMAAAD1//v/AAABAAMAAAD2//z/AAABAAIAAAD3//z/AAADAAIAAAAVAAUAAAACAAMAAAAWAAUAAAADAAEAAAD6//n/AAAAAAMAAAD3/wUAAAABAAEAAAD3/wYAAAAAAAEAAAD3/wcAAAAAAAEAAAD3/wgAAAAAAAEAAAD4/wUAAAACAAMAAAD5/wUAAAACAAMAAAD6/wUAAAACAAMAAAD7/wUAAAACAAMAAAD8/wUAAAACAAEAAAD8/wYAAAAAAAEAAAD8/wcAAAADAAEAAAD8/wgAAAAAAAEAAAD3/wkAAAABAAIAAAD4/wkAAAACAAMAAAD5/wkAAAACAAMAAAD6/wkAAAACAAMAAAD7/wkAAAACAAMAAAD8/wkAAAADAAIAAAD7/wcAAAABAAMAAAD5/wcAAAAAAAMAAAATAAEAAAADAAMAAAAUAAUAAAABAAMAAAASAAEAAAABAAMAAAAOAAgAAAAAAAAAAAAOAAkAAAABAAIAAAAPAAkAAAACAAMAAAAQAAkAAAACAAMAAAARAAkAAAACAAMAAAASAAkAAAACAAMAAAATAAkAAAACAAMAAAAUAAkAAAACAAMAAAAVAAkAAAACAAMAAAAWAAkAAAADAAIAAAAWAAYAAAAAAAEAAAAWAAcAAAAAAAEAAAAWAAgAAAAAAAEAAAD9/wUAAAACAAMAAAD+/wUAAAADAAMAAAD3/wQAAAAAAAEAAAD3/wMAAAABAAAAAAD4/wMAAAACAAMAAAD5/wMAAAACAAMAAAD6/wMAAAACAAMAAAD7/wMAAAACAAMAAAD8/wMAAAADAAAAAAD8/wQAAAAAAAEAAAA=")
 tile_set = ExtResource("2_0eyg6")
 

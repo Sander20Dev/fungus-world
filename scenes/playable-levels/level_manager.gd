@@ -18,20 +18,32 @@ var _new_level: Node2D
 var transition_loaded = false
 var scene_loaded = false
 
+var is_changing = false
+
+var current_level_states = LevelState.new()
+
+#@onready var environment = Environment.new()
+#@onready var world2d = get_world_2d()
+
 func _ready():
+	#world2d.set_environment()
 	instance = self
 	change_level(world, level)
 
 func change_level(world: int, level: int) -> void:
+	if is_changing: return
+	
 	var index = (world-1) * 4 + (level-1)
+	is_changing = true
 	
 	if all_levels.size() > index:
 		_new_level = all_levels[index].instantiate()
+		Levels.currentRawWorld = world-1
 		
 		self.world = world
 		self.level = level
 		
-		get_tree().paused = true
+		#get_tree().paused = true
 		track_1.process_mode = Node.PROCESS_MODE_ALWAYS
 		transition.show()
 		main_camera.position_smoothing_enabled = false
@@ -39,6 +51,7 @@ func change_level(world: int, level: int) -> void:
 		if current_level_node:
 			transition.transition_out()
 		else:
+			RenderingServer.set_default_clear_color(Levels.background_color[world-1])
 			_load_new_level()
 
 func reload_level():
@@ -72,20 +85,24 @@ func go_to_next_level():
 func _load_new_level():
 	current_level_node = _new_level
 	
-	transition.transition_in()
 	add_child(current_level_node)
+	transition.transition_in()
 	if current_level_node is Level:
 		fungy.position = current_level_node.player_spawn
 		main_camera.origin_by_tiles = current_level_node.origin
 		main_camera.size_by_tiles = current_level_node.size
+		current_level_node.start()
 
 func _on_transition_animation_end(anim_name: StringName) -> void:
 	if anim_name == "out":
 		if current_level_node:
 			current_level_node.queue_free()
+		RenderingServer.set_default_clear_color(Levels.background_color[world-1])
 		_load_new_level()
 	else:
 		main_camera.position_smoothing_enabled = true
 		transition.hide()
 		track_1.process_mode = Node.PROCESS_MODE_INHERIT
-		get_tree().paused = false
+		current_level_states = LevelState.new()
+		is_changing = false
+		#get_tree().paused = false

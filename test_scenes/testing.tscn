@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=4 uid="uid://gj0lwmnptbk8"]
 
 [ext_resource type="TileSet" uid="uid://cvkie5n1r1tpe" path="res://presets/tilesets/terrain.tres" id="1_t447j"]
-[ext_resource type="PackedScene" uid="uid://falnw41lsu7e" path="res://utilities/door.tscn" id="2_g8t7j"]
-[ext_resource type="PackedScene" uid="uid://bgom2ohnp8qvy" path="res://utilities/key.tscn" id="3_0c0tn"]
+[ext_resource type="PackedScene" uid="uid://falnw41lsu7e" path="res://utilities/scape_options/door.tscn" id="2_g8t7j"]
+[ext_resource type="PackedScene" uid="uid://bgom2ohnp8qvy" path="res://utilities/actives/key.tscn" id="3_0c0tn"]
 [ext_resource type="PackedScene" uid="uid://ch6uqin66i1v7" path="res://scenes/characters/fungy.tscn" id="4_w63q0"]
 
 [node name="Testing" type="Node2D"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bgom2ohnp8qvy"]
 
 [ext_resource type="Texture2D" uid="uid://dsgv7h8p6lo58" path="res://assets/sprites/utilities/key.png" id="1_eeh2p"]
-[ext_resource type="Script" path="res://utilities/key.gd" id="1_xe8g4"]
+[ext_resource type="Script" path="res://utilities/actives/key.gd" id="1_xe8g4"]
 [ext_resource type="AudioStream" uid="uid://bbcso17w5alv0" path="res://assets/audios/sfx/key-catch.wav" id="3_afunr"]
 
 [sub_resource type="Animation" id="Animation_8t88j"]

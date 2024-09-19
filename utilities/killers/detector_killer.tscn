@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d1ym5poajs1qg"]
 
-[ext_resource type="Script" path="res://utilities/detector_killer.gd" id="1_yh7q0"]
+[ext_resource type="Script" path="res://utilities/killers/detector_killer.gd" id="1_yh7q0"]
 
 [node name="DetectorKiller" type="Node2D"]
 script = ExtResource("1_yh7q0")
