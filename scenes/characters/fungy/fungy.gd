@@ -18,3 +18,12 @@ func _ready():
 
 func reset():
 	reset_player.emit()
+
+func do_untangible():
+	set_physics_process(false)
+	self.set_collision_layer_value(1, false)
+	pass
+func do_tangible():
+	set_physics_process(true)
+	self.set_collision_layer_value(1, true)
+	pass

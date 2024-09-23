@@ -1,9 +1,9 @@
 class_name FungyConstants extends Resource
 
-const SPEED = 150.0
-const SNEAKING_SPEED = 75.0
-const JUMP_VELOCITY = -450.0
-const SNEAKING_JUMP_VELOCITY = -300.0
+const SPEED = 300.0
+const SNEAKING_SPEED = 150.0
+const JUMP_VELOCITY = -900.0
+const SNEAKING_JUMP_VELOCITY = -600.0
 
 const ANIMATION_IDLE = "idle"
 const ANIMATION_WALKING = "walking"

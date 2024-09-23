@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://m80ad0lraxdu"]
+
+[resource]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 32
+TitleLabel/base_type = &"Label"
+TitleLabel/font_sizes/font_size = 64

@@ -9,7 +9,6 @@
 [node name="Lvl2" type="Node2D" node_paths=PackedStringArray("player_spawn_node")]
 script = ExtResource("1_2sf3w")
 player_spawn_node = NodePath("PlayerSpawn")
-level = 2
 origin = Vector2(-13, -12)
 size = Vector2(48, 24)
 
@@ -17,72 +16,61 @@ size = Vector2(48, 24)
 modulate = Color(0.6, 0.878431, 0.462745, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Colorize"]
+scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAAAAIAAAABAAMAAAABAAIAAAACAAMAAAACAAIAAAADAAMAAAAFAAMAAAAAAAMAAAAHAAUAAAAAAAMAAAAIAAgAAAAAAAMAAAAIAAMAAAAAAAIAAAAIAAIAAAAAAAEAAAAIAAEAAAAAAAEAAAAIAAAAAAAAAAEAAAAIAP//AAAAAAEAAAAIAP7/AAABAAEAAAAKAAcAAAAAAAMAAAAMAAYAAAABAAMAAAANAAYAAAADAAMAAAAQAAUAAAABAAMAAAARAAUAAAADAAMAAAAWAAQAAAAAAAAAAAAYAAMAAAAAAAIAAAAYAAIAAAAAAAAAAAAbAAQAAAAAAAMAAAAeAAIAAAABAAMAAAAfAAIAAAACAAAAAAAgAAIAAAACAAAAAAAhAAIAAAADAAMAAAAfAAMAAAABAAIAAAAgAAMAAAADAAIAAAAJAP7/AAACAAMAAAAKAP7/AAACAAMAAAALAP7/AAACAAMAAAAMAP7/AAADAAMAAAAPAAAAAAABAAMAAAAQAAAAAAADAAMAAAAFAP3/AAABAAMAAAAGAP3/AAACAAMAAAAHAP3/AAACAAMAAAAIAP3/AAADAAAAAAACAPv/AAAAAAMAAAD///n/AAAAAAMAAAD2//v/AAACAAAAAAD3//v/AAACAAAAAAD4//v/AAADAAMAAAD1//v/AAABAAMAAAD2//z/AAABAAIAAAD3//z/AAADAAIAAAAVAAUAAAACAAMAAAAWAAUAAAADAAEAAAD6//n/AAAAAAMAAAD3/wUAAAABAAEAAAD3/wYAAAAAAAEAAAD3/wcAAAAAAAEAAAD3/wgAAAAAAAEAAAD4/wUAAAACAAMAAAD5/wUAAAACAAMAAAD6/wUAAAACAAMAAAD7/wUAAAACAAMAAAD8/wUAAAACAAEAAAD8/wYAAAAAAAEAAAD8/wcAAAADAAEAAAD8/wgAAAAAAAEAAAD3/wkAAAABAAIAAAD4/wkAAAACAAMAAAD5/wkAAAACAAMAAAD6/wkAAAACAAMAAAD7/wkAAAACAAMAAAD8/wkAAAADAAIAAAD7/wcAAAABAAMAAAD5/wcAAAAAAAMAAAATAAEAAAADAAMAAAAUAAUAAAABAAMAAAASAAEAAAABAAMAAAAOAAgAAAAAAAAAAAAOAAkAAAABAAIAAAAPAAkAAAACAAMAAAAQAAkAAAACAAMAAAARAAkAAAACAAMAAAASAAkAAAACAAMAAAATAAkAAAACAAMAAAAUAAkAAAACAAMAAAAVAAkAAAACAAMAAAAWAAkAAAADAAIAAAAWAAYAAAAAAAEAAAAWAAcAAAAAAAEAAAAWAAgAAAAAAAEAAAD9/wUAAAACAAMAAAD+/wUAAAADAAMAAAD3/wQAAAAAAAEAAAD3/wMAAAABAAAAAAD4/wMAAAACAAMAAAD5/wMAAAACAAMAAAD6/wMAAAACAAMAAAD7/wMAAAACAAMAAAD8/wMAAAADAAAAAAD8/wQAAAAAAAEAAAA=")
 tile_set = ExtResource("2_0eyg6")
 
-[node name="ADText" type="RichTextLabel" parent="."]
+[node name="ADText" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 5.0
-offset_top = 138.0
-offset_right = 175.0
-offset_bottom = 161.0
+offset_left = 106.0
+offset_top = 2.0
+offset_right = 646.0
+offset_bottom = 41.0
 grow_horizontal = 2
 grow_vertical = 2
-bbcode_enabled = true
-text = "[color=#000]Evita caer. Salta bien."
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
+text = "Evita caer. Salta bien."
 
-[node name="ADText2" type="RichTextLabel" parent="."]
+[node name="ADText2" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -401.0
-offset_top = -266.0
-offset_right = -179.0
-offset_bottom = -243.0
+offset_left = -390.0
+offset_top = -301.0
+offset_right = 254.0
+offset_bottom = -262.0
 grow_horizontal = 2
 grow_vertical = 2
-bbcode_enabled = true
-text = "[color=#000]Toma la llave y ve a la puerta"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
+text = "Toma la llave y ve a la puerta"
 
-[node name="ADText3" type="RichTextLabel" parent="."]
+[node name="ADText3" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 974.0
-offset_top = 65.0
-offset_right = 1076.0
-offset_bottom = 85.0
+offset_left = 1952.0
+offset_top = 144.0
+offset_right = 2358.0
+offset_bottom = 183.0
 grow_horizontal = 2
 grow_vertical = 2
-bbcode_enabled = true
-text = "[color=#000]Busca la llave"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
+text = "Busca la llave"
 
 [node name="Key" parent="." node_paths=PackedStringArray("door") instance=ExtResource("3_lg6b8")]
-position = Vector2(-292, -193)
+position = Vector2(-583, -401)
 door = NodePath("../Door")
 
 [node name="Door" parent="." instance=ExtResource("4_0i8va")]
-position = Vector2(1022, 32)
+position = Vector2(2048, 64)
 
 [node name="DetectorKiller" parent="." instance=ExtResource("6_0depk")]
-position = Vector2(-418, 366)
+position = Vector2(0, 848)
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
-position = Vector2(45, 21)
+position = Vector2(80, 41)

@@ -13,7 +13,6 @@ var player_spawn: Vector2 :
 	set(val):
 		world = val
 		start()
-		print(Levels.tiles_color)
 
 @export var origin: Vector2
 @export var size: Vector2

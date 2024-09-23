@@ -47,6 +47,7 @@ _data = {
 radius = 24.0
 
 [node name="Key" type="Area2D"]
+scale = Vector2(2, 2)
 collision_layer = 0
 script = ExtResource("1_xe8g4")
 

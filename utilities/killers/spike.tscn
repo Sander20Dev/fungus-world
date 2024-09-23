@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b3t6aayox4p1h" path="res://assets/sprites/utilities/spike.png" id="1_jnyuf"]
 
 [node name="Spike" type="StaticBody2D"]
+scale = Vector2(2, 2)
 collision_layer = 4
 script = ExtResource("1_0bhif")
 

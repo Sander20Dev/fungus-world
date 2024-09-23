@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://i4clebfs1kws"]
+[gd_scene load_steps=7 format=4 uid="uid://i4clebfs1kws"]
 
 [ext_resource type="Script" path="res://scenes/playable-levels/scripts/level.gd" id="1_nscso"]
 [ext_resource type="TileSet" uid="uid://cvkie5n1r1tpe" path="res://presets/tilesets/terrain.tres" id="2_5a6uj"]
@@ -6,9 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bgom2ohnp8qvy" path="res://utilities/actives/key.tscn" id="4_cdojx"]
 [ext_resource type="PackedScene" uid="uid://d1ym5poajs1qg" path="res://utilities/killers/detector_killer.tscn" id="5_yc1h7"]
 [ext_resource type="PackedScene" uid="uid://d8l4j2yaedsg" path="res://utilities/killers/spike.tscn" id="6_s7qpj"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_k0x32"]
-font_color = Color(0, 0, 0, 1)
 
 [node name="Lvl1" type="Node2D" node_paths=PackedStringArray("player_spawn_node")]
 script = ExtResource("1_nscso")
@@ -20,81 +17,81 @@ size = Vector2(36, 24)
 modulate = Color(0.862745, 0.364706, 0.341176, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Colorize"]
+scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAAAA0AAAABAAMAAAABAA0AAAACAAMAAAACAA0AAAADAAMAAAADAA8AAAABAAMAAAAEAA8AAAACAAMAAAAFAA8AAAADAAMAAAAIAA4AAAABAAMAAAAJAA4AAAACAAMAAAAKAA4AAAACAAMAAAALAA4AAAADAAIAAAALAA0AAAABAAAAAAAMAA0AAAADAAMAAAAOAAwAAAABAAMAAAAPAAwAAAADAAMAAAAQABEAAAABAAMAAAARABEAAAACAAMAAAASABEAAAADAAMAAAAUABIAAAABAAMAAAAVABIAAAADAAMAAAAXABEAAAAAAAMAAAAYAA8AAAAAAAMAAAAZABAAAAAAAAAAAAAZABEAAAABAAIAAAAaABEAAAACAAMAAAAbABEAAAACAAMAAAAcABEAAAACAAMAAAAdABEAAAADAAMAAAAfAA8AAAAAAAMAAAAgAA0AAAAAAAMAAAAeAAsAAAAAAAMAAAAcAAsAAAADAAMAAAAZAAsAAAAAAAEAAAAZAAoAAAAAAAEAAAAZAAkAAAADAAAAAAAYAAkAAAACAAMAAAAXAAkAAAABAAIAAAAbAAcAAAABAAMAAAAcAAcAAAADAAIAAAAVAAcAAAACAAMAAAAUAAcAAAABAAIAAAAXAAQAAAACAAMAAAAYAAQAAAACAAIAAAAZAAQAAAACAAMAAAAaAAQAAAADAAMAAAAWAAQAAAABAAMAAAAUAAYAAAAAAAEAAAAUAAUAAAAAAAEAAAAUAAQAAAAAAAEAAAAUAAMAAAAAAAAAAAAcAAYAAAAAAAEAAAAcAAUAAAAAAAEAAAAcAAQAAAAAAAEAAAAcAAMAAAAAAAAAAAAUAAAAAAABAAMAAAAVAAAAAAACAAMAAAAWAAAAAAACAAMAAAAXAAAAAAACAAMAAAAYAAAAAAACAAAAAAAZAAAAAAACAAMAAAAaAAAAAAACAAMAAAAbAAAAAAACAAMAAAAcAAAAAAADAAMAAAASAAMAAAADAAMAAAARAAMAAAABAAMAAAAOAAUAAAADAAMAAAANAAUAAAACAAMAAAAMAAUAAAACAAMAAAALAAUAAAABAAIAAAALAAEAAAAAAAAAAAALAAIAAAAAAAEAAAALAAMAAAAAAAEAAAALAAQAAAAAAAEAAAAZAAwAAAAAAAEAAAAZAA0AAAAAAAIAAAAbAAsAAAABAAMAAAAWAAcAAAACAAMAAAAXAAcAAAADAAAAAAAXAAgAAAAAAAEAAAAYAAMAAAAAAAEAAAAYAAIAAAAAAAEAAAAYAAEAAAAAAAEAAAAeAAMAAAAAAAMAAAAhAAUAAAACAAMAAAAiAAUAAAADAAMAAAAgAAUAAAABAAMAAAA=")
 tile_set = ExtResource("2_5a6uj")
 
 [node name="Spikes" type="Node2D" parent="Colorize"]
 
 [node name="Spike" parent="Colorize/Spikes" instance=ExtResource("6_s7qpj")]
-position = Vector2(112, 480)
+position = Vector2(224, 960)
 
 [node name="Spike2" parent="Colorize/Spikes" instance=ExtResource("6_s7qpj")]
-position = Vector2(337, 448)
+position = Vector2(674, 896)
 
 [node name="Spike3" parent="Colorize/Spikes" instance=ExtResource("6_s7qpj")]
-position = Vector2(305, 448)
+position = Vector2(610, 896)
 
 [node name="Spike4" parent="Colorize/Spikes" instance=ExtResource("6_s7qpj")]
-position = Vector2(464, 384)
+position = Vector2(928, 768)
 
 [node name="Spike5" parent="Colorize/Spikes" instance=ExtResource("6_s7qpj")]
-position = Vector2(528, 544)
+position = Vector2(1056, 1088)
 
 [node name="Spike6" parent="Colorize/Spikes" instance=ExtResource("6_s7qpj")]
-position = Vector2(560, 544)
+position = Vector2(1120, 1088)
 
 [node name="Spike7" parent="Colorize/Spikes" instance=ExtResource("6_s7qpj")]
-position = Vector2(688, 576)
+position = Vector2(1376, 1152)
 
 [node name="Spike8" parent="Colorize/Spikes" instance=ExtResource("6_s7qpj")]
-position = Vector2(736, 560)
+position = Vector2(1472, 1120)
 rotation = -1.5708
 
 [node name="Spike9" parent="Colorize/Spikes" instance=ExtResource("6_s7qpj")]
-position = Vector2(768, 496)
+position = Vector2(1536, 992)
 rotation = -1.5708
 
 [node name="Spike10" parent="Colorize/Spikes" instance=ExtResource("6_s7qpj")]
-position = Vector2(944, 544)
+position = Vector2(1888, 1088)
 
 [node name="Spike11" parent="Colorize/Spikes" instance=ExtResource("6_s7qpj")]
-position = Vector2(1024, 432)
+position = Vector2(2048, 864)
 rotation = -1.5708
 
 [node name="Spike16" parent="Colorize/Spikes" instance=ExtResource("6_s7qpj")]
-position = Vector2(976, 96)
+position = Vector2(1952, 192)
 
 [node name="Spike12" parent="Colorize/Spikes" instance=ExtResource("6_s7qpj")]
-position = Vector2(800, 400)
+position = Vector2(1600, 800)
 rotation = -1.5708
 
 [node name="Spike13" parent="Colorize/Spikes" instance=ExtResource("6_s7qpj")]
-position = Vector2(800, 432)
+position = Vector2(1600, 864)
 rotation = -1.5708
 
 [node name="Spike14" parent="Colorize/Spikes" instance=ExtResource("6_s7qpj")]
-position = Vector2(560, 96)
+position = Vector2(1120, 192)
 
 [node name="Spike15" parent="Colorize/Spikes" instance=ExtResource("6_s7qpj")]
-position = Vector2(464, 160)
+position = Vector2(928, 320)
 
 [node name="Door" parent="." instance=ExtResource("3_15mf6")]
-position = Vector2(417, 128)
+position = Vector2(832, 256)
 
 [node name="Key" parent="." node_paths=PackedStringArray("door") instance=ExtResource("4_cdojx")]
-position = Vector2(1071, 127)
+position = Vector2(2144, 264)
 door = NodePath("../Door")
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
-position = Vector2(40, 356)
+position = Vector2(96, 776)
 
 [node name="DetectorKiller" parent="." instance=ExtResource("5_yc1h7")]
-position = Vector2(5, 655)
+position = Vector2(0, 1312)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 216.0
-offset_top = 488.0
-offset_right = 379.0
-offset_bottom = 508.0
+offset_left = 272.0
+offset_top = 752.0
+offset_right = 597.0
+offset_bottom = 791.0
 text = "Evita tocar las púas"
-label_settings = SubResource("LabelSettings_k0x32")

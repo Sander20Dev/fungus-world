@@ -14,14 +14,10 @@ const LAZER = preload("res://utilities/killers/lazer/raw_lazer.tscn")
 		
 		var val_range = range(val)
 		var middle = (float(val_range.size()) - 1)/2
-		print("_______________")
-		print("MIDDLE:", middle)
 		for i in val_range:
 			var lazer = LAZER.instantiate()
 			add_child(lazer)
-			print("-> ", i)
-			print("RESULT:", (i-middle)*32)
-			lazer.position.y = (i-middle) * 32
+			lazer.position.y = (i-middle) * 64
 
 var disabled = false :
 	set(val):

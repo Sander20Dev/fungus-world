@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://fccqth8tft4l"]
+
+[ext_resource type="TileSet" uid="uid://cvkie5n1r1tpe" path="res://presets/tilesets/terrain.tres" id="1_jmde7"]
+
+[node name="Terrain" type="TileMapLayer"]
+scale = Vector2(2, 2)
+tile_set = ExtResource("1_jmde7")

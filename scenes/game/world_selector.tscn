@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=3 uid="uid://d4n1hhhsjma6r"]
+
+[ext_resource type="Texture2D" uid="uid://dyp35rfg16yll" path="res://assets/sprites/ui/world-selector/w1-normal.png" id="1_cvqt7"]
+[ext_resource type="Script" path="res://scenes/game/world_selector.gd" id="1_i7a7c"]
+[ext_resource type="Texture2D" uid="uid://bew6ouu5gjmam" path="res://assets/sprites/ui/world-selector/w1-pressed.png" id="2_dblsy"]
+[ext_resource type="Texture2D" uid="uid://cgokdjia5w6y6" path="res://assets/sprites/ui/world-selector/w2-normal.png" id="3_pbgbk"]
+[ext_resource type="Texture2D" uid="uid://dcf1i1ccrr4np" path="res://assets/sprites/ui/world-selector/w2-pressed.png" id="4_mxu3e"]
+[ext_resource type="Texture2D" uid="uid://b353vodhhe8yw" path="res://assets/sprites/ui/world-selector/w3-normal.png" id="5_7at85"]
+[ext_resource type="Texture2D" uid="uid://m1luqerwd3le" path="res://assets/sprites/ui/world-selector/w3-pressed.png" id="6_ps6v8"]
+[ext_resource type="Texture2D" uid="uid://bhoqoe2067kfb" path="res://assets/sprites/ui/world-selector/unlocked-level.png" id="7_k6o6w"]
+
+[node name="WorldSelector" type="CanvasLayer"]
+script = ExtResource("1_i7a7c")
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -248.5
+offset_top = 64.0
+offset_right = 248.5
+offset_bottom = 123.0
+grow_horizontal = 2
+theme_type_variation = &"TitleLabel"
+text = "SELECCIONA EL MUNDO"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -352.0
+offset_top = -544.0
+offset_right = 352.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+columns = 3
+
+[node name="World 1" type="TextureButton" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("1_cvqt7")
+texture_pressed = ExtResource("2_dblsy")
+stretch_mode = 0
+
+[node name="World 2" type="TextureButton" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("3_pbgbk")
+texture_pressed = ExtResource("4_mxu3e")
+stretch_mode = 0
+
+[node name="World 3" type="TextureButton" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("5_7at85")
+texture_pressed = ExtResource("6_ps6v8")
+stretch_mode = 0
+
+[node name="World 4" type="TextureButton" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_normal = ExtResource("7_k6o6w")
+texture_disabled = ExtResource("7_k6o6w")
+stretch_mode = 0
+
+[node name="World 5" type="TextureButton" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_normal = ExtResource("7_k6o6w")
+texture_disabled = ExtResource("7_k6o6w")
+stretch_mode = 0
+
+[node name="World 6" type="TextureButton" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_normal = ExtResource("7_k6o6w")
+texture_disabled = ExtResource("7_k6o6w")
+stretch_mode = 0

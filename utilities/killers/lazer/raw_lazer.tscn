@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://utilities/killers/lazer/raw_lazer.gd" id="1_p18nv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8edl1"]
-size = Vector2(8, 32)
+size = Vector2(16, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q3fnf"]
 atlas = ExtResource("1_nvu83")
@@ -133,5 +133,6 @@ script = ExtResource("1_p18nv")
 shape = SubResource("RectangleShape2D_8edl1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_0awko")
 frame_progress = 0.333496

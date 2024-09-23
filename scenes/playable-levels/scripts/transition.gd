@@ -9,7 +9,6 @@ signal animation_end(anim_name: StringName)
 func _setup():
 	if not animation_player: animation_player = $AnimationPlayer
 	if not canvas_modulate: canvas_modulate = $CanvasModulate
-	print(canvas_modulate.color)
 	canvas_modulate.color = Levels.tiles_color[Levels.currentRawWorld]
 
 func transition_in():

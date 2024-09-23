@@ -8,16 +8,16 @@ extends Camera2D
 @export var origin_by_tiles = Vector2() :
 	set(val):
 		origin_by_tiles = val
-		limit_top = origin_by_tiles.y * 32
-		limit_left = origin_by_tiles.x * 32
-		limit_bottom = origin_by_tiles.y * 32 + size_by_tiles.y * 32
-		limit_right = origin_by_tiles.x * 32 + size_by_tiles.x * 32
+		limit_top = origin_by_tiles.y * 64
+		limit_left = origin_by_tiles.x * 64
+		limit_bottom = origin_by_tiles.y * 64 + size_by_tiles.y * 64
+		limit_right = origin_by_tiles.x * 64 + size_by_tiles.x * 64
 
 @export var size_by_tiles = Vector2(12, 18) :
 	set(val):
 		size_by_tiles = val
-		limit_bottom = origin_by_tiles.y * 32 + size_by_tiles.y * 32
-		limit_right = origin_by_tiles.x * 32 + size_by_tiles.x * 32
+		limit_bottom = origin_by_tiles.y * 64 + size_by_tiles.y * 64
+		limit_right = origin_by_tiles.x * 64 + size_by_tiles.x * 64
 		
 
 func _ready():

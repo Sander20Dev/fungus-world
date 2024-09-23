@@ -23,10 +23,12 @@ config/icon="res://icon.png"
 [display]
 
 window/size/viewport_height=768
-window/stretch/scale=2.0
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [gui]
 
+theme/custom="res://presets/theme.tres"
 theme/custom_font="res://assets/fonts/pixelify_sans.ttf"
 
 [input]
@@ -58,6 +60,10 @@ p1_sneak={
 2d_physics/layer_2="Terrain"
 2d_physics/layer_3="Interactuables"
 2d_physics/layer_4="Escape"
+
+[physics]
+
+2d/default_gravity=1800.0
 
 [rendering]
 

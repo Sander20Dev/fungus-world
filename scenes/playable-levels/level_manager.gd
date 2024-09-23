@@ -8,9 +8,6 @@ static var instance: LevelManager
 @onready var transition: TransitionLevel = $"../Transition"
 @onready var track_1: AudioStreamPlayer = $"../Track1"
 
-@export var world = 1
-@export var level = 1
-
 @export var all_levels: Array[PackedScene] = []
 
 var current_level_node: Node2D
@@ -28,7 +25,7 @@ var current_level_states = LevelState.new()
 func _ready():
 	#world2d.set_environment()
 	instance = self
-	change_level(world, level)
+	change_level(Global.world, Global.level)
 
 func change_level(world: int, level: int) -> void:
 	if is_changing: return
@@ -37,29 +34,30 @@ func change_level(world: int, level: int) -> void:
 	is_changing = true
 	
 	if all_levels.size() > index:
+		fungy.do_untangible()
 		_new_level = all_levels[index].instantiate()
+		print("instantiated: ", world, "-", level)
+		print(fungy.position)
 		Levels.currentRawWorld = world-1
 		
-		self.world = world
-		self.level = level
+		Global.world = world
+		Global.level = level
 		
-		#get_tree().paused = true
-		track_1.process_mode = Node.PROCESS_MODE_ALWAYS
 		transition.show()
 		main_camera.position_smoothing_enabled = false
 		
 		if current_level_node:
 			transition.transition_out()
 		else:
-			RenderingServer.set_default_clear_color(Levels.background_color[world-1])
+			Global.update_color()
 			_load_new_level()
 
 func reload_level():
-	change_level(world, level)
+	change_level(Global.world, Global.level)
 
 func get_next_level():
-	var lvl = level+1
-	var wrld = world
+	var lvl = Global.level+1
+	var wrld = Global.world
 	
 	if lvl > 4:
 		lvl = 1
@@ -93,16 +91,18 @@ func _load_new_level():
 		main_camera.size_by_tiles = current_level_node.size
 		current_level_node.start()
 
+func _end_transition():
+	main_camera.position_smoothing_enabled = true
+	transition.hide()
+	current_level_states = LevelState.new()
+	is_changing = false
+	fungy.do_tangible()
+
 func _on_transition_animation_end(anim_name: StringName) -> void:
 	if anim_name == "out":
 		if current_level_node:
 			current_level_node.queue_free()
-		RenderingServer.set_default_clear_color(Levels.background_color[world-1])
+		Global.update_color()
 		_load_new_level()
 	else:
-		main_camera.position_smoothing_enabled = true
-		transition.hide()
-		track_1.process_mode = Node.PROCESS_MODE_INHERIT
-		current_level_states = LevelState.new()
-		is_changing = false
-		#get_tree().paused = false
+		_end_transition()

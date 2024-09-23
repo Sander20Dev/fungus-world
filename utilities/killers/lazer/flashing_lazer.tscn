@@ -4,8 +4,14 @@
 
 [node name="FlashingLazer" type="Node2D"]
 script = ExtResource("1_0bn7q")
+delay_time = null
 lazers_count = 10
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Delay" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]

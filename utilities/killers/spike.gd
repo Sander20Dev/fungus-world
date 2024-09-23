@@ -23,11 +23,15 @@ enum ROTATION {
 		elif val == ROTATION.RIGHT:
 			rotation_degrees = 270
 
-func _process(_delta):
+func _ready() -> void:
+	killer.body_entered.connect(_detect_collision)
+
+func _detect_collision(body: Node2D):
+	print(body.name, ' - in: ', body.position)
 	if not LevelManager.instance: return
 	if Engine.is_editor_hint(): return
 	if LevelManager.instance.current_level_states.is_dead: return
 	
-	for body in killer.get_overlapping_bodies():
-		if body is Fungy:
-			LevelManager.instance.current_level_states.kill()
+	if body is Fungy:
+		#print(body.position)
+		LevelManager.instance.current_level_states.kill()

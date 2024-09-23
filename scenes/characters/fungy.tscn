@@ -688,7 +688,7 @@ size = Vector2(8, 5)
 size = Vector2(8, 19)
 
 [node name="Fungy" type="CharacterBody2D"]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(3, 3)
 collision_mask = 15
 script = ExtResource("1_lypfv")
 
