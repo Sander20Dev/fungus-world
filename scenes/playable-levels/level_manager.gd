@@ -37,7 +37,6 @@ func change_level(world: int, level: int) -> void:
 		fungy.do_untangible()
 		_new_level = all_levels[index].instantiate()
 		print("instantiated: ", world, "-", level)
-		print(fungy.position)
 		Levels.currentRawWorld = world-1
 		
 		Global.world = world

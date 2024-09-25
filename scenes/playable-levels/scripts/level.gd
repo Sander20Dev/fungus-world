@@ -20,4 +20,4 @@ var player_spawn: Vector2 :
 func start():
 	var colorize = get_node_or_null("Colorize")
 	if colorize and colorize is Node2D:
-		(colorize as Node2D).modulate = Levels.tiles_color[world-1]
+		(colorize as Node2D).modulate = Global.get_tint_color(world)

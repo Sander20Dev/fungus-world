@@ -27,7 +27,6 @@ func _ready() -> void:
 	killer.body_entered.connect(_detect_collision)
 
 func _detect_collision(body: Node2D):
-	print(body.name, ' - in: ', body.position)
 	if not LevelManager.instance: return
 	if Engine.is_editor_hint(): return
 	if LevelManager.instance.current_level_states.is_dead: return

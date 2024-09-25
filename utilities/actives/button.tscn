@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ccp31co0ypyv2" path="res://assets/sprites/utilities/button.png" id="1_vrlg3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1fq0"]
-size = Vector2(16, 8)
+size = Vector2(32, 16)
 
 [node name="Button" type="Area2D"]
 collision_layer = 4
@@ -12,11 +12,12 @@ script = ExtResource("1_jh2ik")
 
 [node name="Button" type="Sprite2D" parent="."]
 position = Vector2(0, -16)
+scale = Vector2(2, 1)
 texture = ExtResource("1_vrlg3")
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_k1fq0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

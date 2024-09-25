@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://w72inwd8qkv2"]
+[gd_scene load_steps=12 format=3 uid="uid://w72inwd8qkv2"]
 
 [ext_resource type="Texture2D" uid="uid://cxhwi7kj4431n" path="res://assets/sprites/ui/level-selector/l1-normal.png" id="1_bi7vb"]
 [ext_resource type="Script" path="res://scenes/game/level_selector.gd" id="1_mcq2s"]
 [ext_resource type="Texture2D" uid="uid://l7s14f02l7fn" path="res://assets/sprites/ui/level-selector/l1-pressed.png" id="2_j8xj3"]
+[ext_resource type="PackedScene" uid="uid://4dibqrmicnp" path="res://scenes/game/ui_utils/go_to_back.tscn" id="2_npthv"]
 [ext_resource type="Texture2D" uid="uid://c7e8yy303bq8k" path="res://assets/sprites/ui/level-selector/l2-normal.png" id="3_304nx"]
+[ext_resource type="PackedScene" uid="uid://d4n1hhhsjma6r" path="res://scenes/game/world_selector.tscn" id="3_fvlxv"]
 [ext_resource type="Texture2D" uid="uid://djvyhrr605uf5" path="res://assets/sprites/ui/level-selector/l2-pressed.png" id="4_nkajo"]
 [ext_resource type="Texture2D" uid="uid://buie52copu1y2" path="res://assets/sprites/ui/level-selector/l3-normal.png" id="5_6hyyr"]
 [ext_resource type="Texture2D" uid="uid://dq7dpei8weunm" path="res://assets/sprites/ui/level-selector/l3-pressed.png" id="6_gmlv4"]
@@ -13,22 +15,44 @@
 [node name="LevelSelector" type="CanvasLayer"]
 script = ExtResource("1_mcq2s")
 
-[node name="Title" type="Label" parent="."]
+[node name="Colorize" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GoToBack" parent="Colorize" instance=ExtResource("2_npthv")]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 96.0
+offset_bottom = 96.0
+scale = Vector2(2, 2)
+back_scene = ExtResource("3_fvlxv")
+
+[node name="Title" type="Label" parent="Colorize"]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -331.5
-offset_top = 176.0
-offset_right = 331.5
-offset_bottom = 253.0
+offset_left = -424.0
+offset_top = 64.0
+offset_right = 384.0
+offset_bottom = 141.0
 grow_horizontal = 2
 theme_type_variation = &"TitleLabel"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "SELECCIONA EL MAPA"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 uppercase = true
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="Colorize"]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -45,12 +69,12 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Colorize/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 32
 alignment = 1
 
-[node name="Level 1" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+[node name="Level 1" type="TextureButton" parent="Colorize/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -58,7 +82,7 @@ texture_normal = ExtResource("1_bi7vb")
 texture_pressed = ExtResource("2_j8xj3")
 stretch_mode = 0
 
-[node name="Level 2" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+[node name="Level 2" type="TextureButton" parent="Colorize/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -66,7 +90,7 @@ texture_normal = ExtResource("3_304nx")
 texture_pressed = ExtResource("4_nkajo")
 stretch_mode = 0
 
-[node name="Level 3" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+[node name="Level 3" type="TextureButton" parent="Colorize/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -74,7 +98,7 @@ texture_normal = ExtResource("5_6hyyr")
 texture_pressed = ExtResource("6_gmlv4")
 stretch_mode = 0
 
-[node name="Level 4" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+[node name="Level 4" type="TextureButton" parent="Colorize/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
