@@ -106,18 +106,17 @@ position = Vector2(192, 256)
 [node name="Door" parent="." instance=ExtResource("8_n7huv")]
 position = Vector2(320, 1088)
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." groups=["Guides"]]
 offset_left = 1472.0
 offset_top = 522.0
 offset_right = 1797.0
 offset_bottom = 561.0
-text = "Sube a la plataforma"
+text = "GUIDE_MESSAGES.UP"
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="Label" parent="." groups=["Guides"]]
 offset_left = 864.0
 offset_top = 1056.0
 offset_right = 1251.0
 offset_bottom = 1137.0
-text = "Algunas plataformas 
-necesitan ser activadas"
+text = "GUIDE_MESSAGES.NEED_TO_ACTIVATE"
 horizontal_alignment = 1

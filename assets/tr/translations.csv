@@ -14,9 +14,12 @@ WORLD_12.NAME,,
 SELECT_WORLD.TITLE,Select the world,Selecciona el mundo
 UI.PAUSE.RESUME,Resume,Continuar
 UI.PAUSE.RESTART,Restart,Reiniciar
+UI.PAUSE.VOLUME,Volume,Volumen
 UI.PAUSE.EXIT,Exit,Salir
 UI.MAIN_MENU.START,Start,Comenzar
 UI.MAIN_MENU.SETTINGS,Settings,Ajustes
+UI.MAIN_MENU.ACTIVE_MOBILE_MODE,Active mobile mode,Modo móvil activo
+UI.MAIN_MENU.DISABLE_MOBILE_MODE,Disable mobile mode,Desactivar modo móvil
 UI.MAIN_MENU.QUIT,Quit,Salir
 UI.SETTINGS.VIDEO,Video,Video
 UI.SETTINGS.VIDEO.FULLSCREEN,Fullscreen,Pantalla completa
@@ -24,5 +27,25 @@ UI.SETTINGS.VIDEO.BORDERLESS,Borderless,Sin bordes
 UI.SETTINGS.VIDEO.VSYNC,VSync,VSync
 UI.SETTINGS.AUDIO,Audio,Audio
 UI.SETTINGS.AUDIO.MASTER,Master,Master
-UI.SETTINGS.AUDIO.MUSIC,Music,Music
+UI.SETTINGS.AUDIO.MUSIC,Music,Música
 UI.SETTINGS.AUDIO.SFX,SFX,SFX
+UI.SETTINGS.LANGUAGE,Language,Idioma
+UI.SETTINGS.LANGUAGE.CHANGE,Change,Cambiar
+UI.SETTINGS.LANGUAGE.ENGLISH,English,Inglés
+UI.SETTINGS.LANGUAGE.SPANISH,Spanish,Español
+UI.SETTINGS.LANGUAGE.RESTART,Please restart the game for the change to take effect.,Por favor reinicia el juego para que el cambio tenga efecto.
+GUIDE_MESSAGES.A_D,Press [img]res://assets/sprites/keys/a.png[/img] or [img]res://assets/sprites/keys/d.png[/img] to walk,Presiona [img]res://assets/sprites/keys/a.png[/img] o [img]res://assets/sprites/keys/d.png[/img] para caminar
+GUIDE_MESSAGES.W,Press [img]res://assets/sprites/keys/w.png[/img] to jump,Presiona [img]res://assets/sprites/keys/w.png[/img] para saltar
+GUIDE_MESSAGES.S,Press [img]res://assets/sprites/keys/s.png[/img] to sneak,Presiona [img]res://assets/sprites/keys/s.png[/img] para agacharte
+GUIDE_MESSAGES.TAKE_A_KEY,Take the key,Toma la llave
+GUIDE_MESSAGES.ENTER,Press [img]res://assets/sprites/keys/s.png[/img] to enter,Presiona [img]res://assets/sprites/keys/s.png[/img] para entrar
+GUIDE_MESSAGES.AVOID_FALLING,Avoid falling. Jump high.,Evita caer. Salta bien.
+GUIDE_MESSAGES.TAKE_A_KEY_AND_ENTER,Take the key and go to the door,Toma la llave y ve a la puerta
+GUIDE_MESSAGES.FIND_KEY,Search the key,Busca la llave
+GUIDE_MESSAGES.IF_YOU_SNEAK,If you sneak you can take a short step.,Si te agachas puedes dar saltos cortos
+GUIDE_MESSAGES.AVOID_TOUCHING,Avoid touching the spikes,Evita tocar las púas
+GUIDE_MESSAGES.DONT_TOUCH,Don't touch the spikes,No toques los láseres
+GUIDE_MESSAGES.BUTTON,Press the button,Presiona el botón
+GUIDE_MESSAGES.FIND_ANOTHER_PATH,Search another path,Busca otro camino
+GUIDE_MESSAGES.UP,Go up the platform,Sube a la plataforma
+GUIDE_MESSAGES.NEED_TO_ACTIVATE,Some platforms need to be activated,Algunas plataformas necesitan ser activadas

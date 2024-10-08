@@ -6,9 +6,7 @@ class_name SettingsLayer extends CanvasLayer
 @onready var borderless: CheckBox = $HVideo/CheckBoxs/Borderless
 @onready var v_sync: CheckBox = $HVideo/CheckBoxs/VSync
 
-@onready var master_slider: HSlider = $HAudio/Sliders/MasterSlider
-@onready var music_slider: HSlider = $HAudio/Sliders/MusicSlider
-@onready var sfx_slider: HSlider = $HAudio/Sliders/SfxSlider
+@onready var language_selector: OptionButton = $LanguageSelector
 
 func _ready() -> void:
 	Global.reset_color()
@@ -18,9 +16,8 @@ func _ready() -> void:
 	borderless.button_pressed = DisplayServer.window_get_flag(DisplayServer.WINDOW_FLAG_BORDERLESS)
 	v_sync.button_pressed = DisplayServer.window_get_vsync_mode() == DisplayServer.VSYNC_ENABLED
 	
-	master_slider.value = AudioServer.get_bus_volume_db(0)
-	music_slider.value = AudioServer.get_bus_volume_db(1)
-	sfx_slider.value = AudioServer.get_bus_volume_db(2)
+	print(TranslationServer.get_locale().substr(0, 2))
+	language_selector.selected = languages.find(TranslationServer.get_locale().substr(0, 2))
 
 func _on_fullscreen_toggled(toggled_on: bool) -> void:
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if toggled_on else DisplayServer.WINDOW_MODE_WINDOWED)
@@ -33,17 +30,10 @@ func _on_borderless_toggled(toggled_on: bool) -> void:
 func _on_v_sync_toggled(toggled_on: bool) -> void:
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if toggled_on else DisplayServer.VSYNC_DISABLED)
 
-func _change_volume(bus_index: int, vol: float):
-	AudioServer.set_bus_volume_db(bus_index, vol)
 
-
-func _on_master_slider_value_changed(value: float) -> void:
-	_change_volume(0, value)
-
-
-func _on_music_slider_value_changed(value: float) -> void:
-	_change_volume(1, value)
-
-
-func _on_sfx_slider_value_changed(value: float) -> void:
-	_change_volume(2, value)
+var languages = [
+	"en",
+	"es"
+]
+func _on_language_selector_item_selected(index: int) -> void:
+	TranslationServer.set_locale(languages[index])

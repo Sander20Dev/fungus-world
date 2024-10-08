@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cds0dq5tddlky"]
+
+[ext_resource type="Script" path="res://ui_utils/audio_controllers/audio.gd" id="1_8hmu2"]
+
+[node name="MasterSlider" type="HSlider"]
+size_flags_vertical = 6
+max_value = 1.0
+step = 0.01
+script = ExtResource("1_8hmu2")

@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvd38j5wrip7n"]
+[gd_scene load_steps=7 format=3 uid="uid://cvd38j5wrip7n"]
 
 [ext_resource type="PackedScene" uid="uid://4dibqrmicnp" path="res://scenes/game/ui_utils/go_to_back.tscn" id="1_hkcyk"]
 [ext_resource type="Script" path="res://scenes/game/settings_layer.gd" id="1_jp3tu"]
 [ext_resource type="PackedScene" uid="uid://dbqb5wiqrmafq" path="res://scenes/game/main_scene.tscn" id="2_w8do5"]
+[ext_resource type="PackedScene" uid="uid://cds0dq5tddlky" path="res://ui_utils/audio_controllers/master_slider.tscn" id="4_flf13"]
+[ext_resource type="PackedScene" uid="uid://dej0jpt8wbne6" path="res://ui_utils/audio_controllers/music_slider.tscn" id="5_s3lxd"]
+[ext_resource type="PackedScene" uid="uid://slevo34hm4ii" path="res://ui_utils/audio_controllers/sfx_slider.tscn" id="6_u6cs5"]
 
 [node name="SettingsLayer" type="CanvasLayer"]
 script = ExtResource("1_jp3tu")
@@ -26,9 +29,9 @@ text = "UI.MAIN_MENU.SETTINGS"
 
 [node name="VideoSubtitle" type="Label" parent="."]
 offset_left = 224.0
-offset_top = 176.0
+offset_top = 128.0
 offset_right = 638.0
-offset_bottom = 235.0
+offset_bottom = 187.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
 text = "UI.SETTINGS.VIDEO"
@@ -36,9 +39,9 @@ horizontal_alignment = 1
 
 [node name="HVideo" type="HBoxContainer" parent="."]
 offset_left = 240.0
-offset_top = 240.0
+offset_top = 192.0
 offset_right = 912.0
-offset_bottom = 373.0
+offset_bottom = 325.0
 theme_override_constants/separation = 32
 
 [node name="Labels" type="VBoxContainer" parent="HVideo"]
@@ -81,9 +84,9 @@ size_flags_vertical = 2
 
 [node name="AudioSubtitle" type="Label" parent="."]
 offset_left = 224.0
-offset_top = 416.0
+offset_top = 368.0
 offset_right = 638.0
-offset_bottom = 475.0
+offset_bottom = 427.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
 text = "UI.SETTINGS.AUDIO"
@@ -91,9 +94,9 @@ horizontal_alignment = 1
 
 [node name="HAudio" type="HBoxContainer" parent="."]
 offset_left = 240.0
-offset_top = 480.0
+offset_top = 432.0
 offset_right = 912.0
-offset_bottom = 613.0
+offset_bottom = 565.0
 theme_override_constants/separation = 32
 
 [node name="Labels" type="VBoxContainer" parent="HAudio"]
@@ -120,29 +123,47 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 8
 
-[node name="MasterSlider" type="HSlider" parent="HAudio/Sliders"]
+[node name="MasterSlider" parent="HAudio/Sliders" instance=ExtResource("4_flf13")]
 layout_mode = 2
-size_flags_vertical = 6
-min_value = -80.0
-max_value = 0.0
 
-[node name="MusicSlider" type="HSlider" parent="HAudio/Sliders"]
+[node name="MusicSlider" parent="HAudio/Sliders" instance=ExtResource("5_s3lxd")]
 layout_mode = 2
-size_flags_vertical = 6
-min_value = -80.0
-max_value = 0.0
 
-[node name="SfxSlider" type="HSlider" parent="HAudio/Sliders"]
+[node name="SfxSlider" parent="HAudio/Sliders" instance=ExtResource("6_u6cs5")]
 layout_mode = 2
+
+[node name="LanguageSubtitle" type="Label" parent="."]
+offset_left = 224.0
+offset_top = 608.0
+offset_right = 638.0
+offset_bottom = 667.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "UI.SETTINGS.LANGUAGE"
+horizontal_alignment = 1
+
+[node name="Change" type="Label" parent="."]
+offset_left = 240.0
+offset_top = 671.0
+offset_right = 711.0
+offset_bottom = 710.0
 size_flags_vertical = 6
-min_value = -80.0
-max_value = 0.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "UI.SETTINGS.LANGUAGE.CHANGE"
+
+[node name="LanguageSelector" type="OptionButton" parent="."]
+offset_left = 256.0
+offset_top = 719.0
+offset_right = 640.0
+offset_bottom = 765.0
+item_count = 2
+popup/item_0/text = "UI.SETTINGS.LANGUAGE.ENGLISH"
+popup/item_1/text = "UI.SETTINGS.LANGUAGE.SPANISH"
+popup/item_1/id = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
 [connection signal="toggled" from="HVideo/CheckBoxs/Fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="toggled" from="HVideo/CheckBoxs/Borderless" to="." method="_on_borderless_toggled"]
 [connection signal="toggled" from="HVideo/CheckBoxs/VSync" to="." method="_on_v_sync_toggled"]
-[connection signal="value_changed" from="HAudio/Sliders/MasterSlider" to="." method="_on_master_slider_value_changed"]
-[connection signal="value_changed" from="HAudio/Sliders/MusicSlider" to="." method="_on_music_slider_value_changed"]
-[connection signal="value_changed" from="HAudio/Sliders/SfxSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="item_selected" from="LanguageSelector" to="." method="_on_language_selector_item_selected"]

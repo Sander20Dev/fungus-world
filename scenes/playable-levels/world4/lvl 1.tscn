@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=4 uid="uid://c0o8qt2f2ca60"]
+
+[ext_resource type="Script" path="res://scenes/playable-levels/scripts/level.gd" id="1_c7vgc"]
+[ext_resource type="PackedScene" uid="uid://fccqth8tft4l" path="res://scenes/tools/terrain.tscn" id="2_rb0e1"]
+[ext_resource type="PackedScene" uid="uid://sf7aoungqooq" path="res://scenes/tools/player_spawn.tscn" id="3_ye5b4"]
+
+[node name="Lvl1" type="Node2D" node_paths=PackedStringArray("player_spawn_node")]
+script = ExtResource("1_c7vgc")
+player_spawn_node = NodePath("PlayerSpawn")
+world = 4
+
+[node name="Colorize" type="Node2D" parent="."]
+modulate = Color(0.466667, 0.270588, 0.827451, 1)
+
+[node name="Terrain" parent="Colorize" instance=ExtResource("2_rb0e1")]
+tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAABAAIAAAAAAAEAAAABAAMAAAABAAEAAAABAAQAAAAAAAEAAAABAAUAAAAAAAIAAAACAAMAAAACAAMAAAADAAMAAAADAAEAAAADAAIAAAAAAAEAAAADAAEAAAAAAAAAAAADAAQAAAAAAAEAAAADAAUAAAAAAAIAAAAFAAEAAAABAAAAAAAFAAIAAAAAAAEAAAAFAAMAAAAAAAEAAAAFAAQAAAAAAAEAAAAFAAUAAAABAAIAAAAGAAUAAAACAAMAAAAHAAUAAAADAAIAAAAHAAQAAAAAAAEAAAAHAAMAAAAAAAEAAAAHAAIAAAAAAAEAAAAHAAEAAAADAAAAAAAGAAEAAAACAAMAAAAJAAEAAAAAAAAAAAAJAAIAAAAAAAEAAAAJAAMAAAAAAAEAAAAJAAQAAAAAAAEAAAAJAAUAAAABAAIAAAAKAAUAAAACAAMAAAALAAUAAAADAAMAAAANAAEAAAABAAAAAAANAAIAAAAAAAEAAAANAAMAAAABAAEAAAANAAQAAAAAAAEAAAANAAUAAAAAAAIAAAAOAAEAAAACAAMAAAAPAAEAAAADAAAAAAAPAAIAAAAAAAEAAAAPAAMAAAADAAEAAAAPAAQAAAAAAAEAAAAPAAUAAAAAAAIAAAAOAAMAAAACAAMAAAA=")
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("3_ye5b4")]

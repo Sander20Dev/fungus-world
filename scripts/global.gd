@@ -11,10 +11,10 @@ static var players: Array = [
 	null
 ]
 
-static var world = 3
-static var level = 4
+static var world = 4
+static var level = 1
 
-static var last_world = 3
+static var last_world = 4
 
 static func update_color():
 	RenderingServer.set_default_clear_color(Levels.background_color[world-1])

@@ -25,6 +25,7 @@ var current_level_states = LevelState.new()
 
 func _ready():
 	if not Global.is_mobil: mobile_controls.hide()
+	else: mobile_controls.show()
 	
 	instance = self
 	change_level(Global.world, Global.level)

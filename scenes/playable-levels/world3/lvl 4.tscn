@@ -18,7 +18,7 @@
 script = ExtResource("1_vc2h4")
 player_spawn_node = NodePath("PlayerSpawn")
 world = 3
-size = Vector2(28, 81)
+size = Vector2(81, 28)
 
 [node name="Colorize" type="Node2D" parent="."]
 modulate = Color(0.254902, 0.521569, 0.941176, 1)

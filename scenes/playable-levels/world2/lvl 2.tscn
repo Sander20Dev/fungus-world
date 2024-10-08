@@ -117,24 +117,20 @@ scale = Vector2(1, 1)
 
 [node name="FlashingLazer" parent="Colorize/Lazers" instance=ExtResource("5_q88d1")]
 position = Vector2(1184, 896)
-delay_time = 0.0
 lazers_count = 4
 
 [node name="FlashingLazer2" parent="Colorize/Lazers" instance=ExtResource("5_q88d1")]
 position = Vector2(1376, 896)
 time = 0.8
-delay_time = 0.0
 lazers_count = 4
 
 [node name="FlashingLazer3" parent="Colorize/Lazers" instance=ExtResource("5_q88d1")]
 position = Vector2(1568, 896)
 time = 0.6
-delay_time = 0.0
 lazers_count = 4
 
 [node name="FlashingLazer4" parent="Colorize/Lazers" instance=ExtResource("5_q88d1")]
 position = Vector2(1376, 192)
-delay_time = 0.0
 lazers_count = 2
 
 [node name="FlashingLazer5" parent="Colorize/Lazers" instance=ExtResource("5_q88d1")]
@@ -162,9 +158,9 @@ door = NodePath("../Door")
 [node name="PlayerSpawn" parent="." instance=ExtResource("7_sht6j")]
 position = Vector2(192, 1264)
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." groups=["Guides"]]
 offset_left = 672.0
 offset_top = 848.0
 offset_right = 1006.0
 offset_bottom = 887.0
-text = "No toques los láseres"
+text = "GUIDE_MESSAGES.DONT_TOUCH"

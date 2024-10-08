@@ -28,22 +28,18 @@ tile_map_data = PackedByteArray("AAAAABMAAAABAAMAAAABABMAAAACAAMAAAACABMAAAADAAM
 
 [node name="FlashingLazer" parent="Colorize/lazers" instance=ExtResource("3_va1me")]
 position = Vector2(288, 1088)
-delay_time = 0.0
 lazers_count = 4
 
 [node name="FlashingLazer2" parent="Colorize/lazers" instance=ExtResource("3_va1me")]
 position = Vector2(672, 1088)
-delay_time = 0.0
 lazers_count = 4
 
 [node name="FlashingLazer3" parent="Colorize/lazers" instance=ExtResource("3_va1me")]
 position = Vector2(1056, 1088)
-delay_time = 0.0
 lazers_count = 4
 
 [node name="FlashingLazer4" parent="Colorize/lazers" instance=ExtResource("3_va1me")]
 position = Vector2(2096, 896)
-delay_time = 0.0
 lazers_count = 4
 
 [node name="FlashingLazer5" parent="Colorize/lazers" instance=ExtResource("3_va1me")]
@@ -59,42 +55,35 @@ lazers_count = 4
 [node name="FlashingLazer7" parent="Colorize/lazers" instance=ExtResource("3_va1me")]
 position = Vector2(2464, 384)
 time = 0.8
-delay_time = 0.0
 lazers_count = 4
 
 [node name="FlashingLazer8" parent="Colorize/lazers" instance=ExtResource("3_va1me")]
 position = Vector2(2336, 384)
 time = 0.8
-delay_time = 0.0
 lazers_count = 4
 
 [node name="FlashingLazer9" parent="Colorize/lazers" instance=ExtResource("3_va1me")]
 position = Vector2(2208, 384)
 time = 0.8
-delay_time = 0.0
 lazers_count = 4
 
 [node name="FlashingLazer10" parent="Colorize/lazers" instance=ExtResource("3_va1me")]
 position = Vector2(2080, 384)
 time = 0.8
-delay_time = 0.0
 lazers_count = 4
 
 [node name="FlashingLazer11" parent="Colorize/lazers" instance=ExtResource("3_va1me")]
 position = Vector2(1952, 384)
 time = 0.8
-delay_time = 0.0
 lazers_count = 4
 
 [node name="FlashingLazer12" parent="Colorize/lazers" instance=ExtResource("3_va1me")]
 position = Vector2(1824, 384)
 time = 0.8
-delay_time = 0.0
 lazers_count = 4
 
 [node name="FlashingLazer13" parent="Colorize/lazers" instance=ExtResource("3_va1me")]
 position = Vector2(1632, 544)
-delay_time = 0.0
 lazers_count = 1
 
 [node name="FlashingLazer14" parent="Colorize/lazers" instance=ExtResource("3_va1me")]
@@ -120,7 +109,6 @@ lazers_count = 1
 [node name="FlashingLazer19" parent="Colorize/lazers" instance=ExtResource("3_va1me")]
 position = Vector2(1309, 384)
 time = 0.8
-delay_time = 0.0
 lazers_count = 4
 
 [node name="FlashingLazer20" parent="Colorize/lazers" instance=ExtResource("3_va1me")]
@@ -265,9 +253,9 @@ position = Vector2(80, 1136)
 [node name="DetectorKiller" parent="." instance=ExtResource("5_lhi6i")]
 position = Vector2(0, 1360)
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." groups=["Guides"]]
 offset_left = 1504.0
 offset_top = 592.0
 offset_right = 1776.0
 offset_bottom = 631.0
-text = "Presiona el botón"
+text = "GUIDE_MESSAGES.BUTTON"

@@ -102,15 +102,15 @@ position = Vector2(2144, 320)
 [node name="Spike8" parent="Colorize/Spikes" instance=ExtResource("6_wyi3y")]
 position = Vector2(2080, 384)
 
-[node name="Label" type="Label" parent="Colorize"]
+[node name="PlayerSpawn" parent="." instance=ExtResource("3_bjgqc")]
+position = Vector2(192, 224)
+
+[node name="Label" type="Label" parent="." groups=["Guides"]]
 offset_left = 2288.0
 offset_top = 864.0
 offset_right = 2579.0
 offset_bottom = 903.0
-text = "Busca otro camino"
-
-[node name="PlayerSpawn" parent="." instance=ExtResource("3_bjgqc")]
-position = Vector2(192, 224)
+text = "GUIDE_MESSAGES.FIND_ANOTHER_PATH"
 
 [node name="Key" parent="." node_paths=PackedStringArray("door") instance=ExtResource("8_hpq6d")]
 position = Vector2(3376, 512)

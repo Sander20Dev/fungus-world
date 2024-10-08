@@ -88,5 +88,7 @@ FlatButton/styles/normal = SubResource("StyleBoxTexture_nx7wv")
 FlatButton/styles/pressed = SubResource("StyleBoxTexture_rde65")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 32
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/font_sizes/normal_font_size = 32
 TitleLabel/base_type = &"Label"
 TitleLabel/font_sizes/font_size = 64

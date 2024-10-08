@@ -26,6 +26,10 @@ window/size/viewport_height=768
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+Guides="They are labels which guide the player."
+
 [gui]
 
 theme/custom="res://presets/theme.tres"
