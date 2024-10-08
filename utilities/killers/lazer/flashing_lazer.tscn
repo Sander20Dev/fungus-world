@@ -1,11 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccylx4ugf81hn"]
+[gd_scene load_steps=4 format=3 uid="uid://ccylx4ugf81hn"]
 
 [ext_resource type="Script" path="res://utilities/killers/lazer/flashing_lazer.gd" id="1_0bn7q"]
+[ext_resource type="PackedScene" uid="uid://cvtysjv237a8q" path="res://utilities/killers/lazer/lazer_off_sound.tscn" id="2_yjv1q"]
+[ext_resource type="PackedScene" uid="uid://b37rvewnq6wut" path="res://utilities/killers/lazer/lazer_on_sound.tscn" id="3_utbn3"]
 
 [node name="FlashingLazer" type="Node2D"]
 script = ExtResource("1_0bn7q")
-delay_time = null
 lazers_count = 10
+
+[node name="LazerOffSound" parent="." instance=ExtResource("2_yjv1q")]
+
+[node name="LazerOnSound" parent="." instance=ExtResource("3_utbn3")]
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

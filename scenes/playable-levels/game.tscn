@@ -1,24 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://dm87hs1nuhs4a"]
+[gd_scene load_steps=9 format=3 uid="uid://dm87hs1nuhs4a"]
 
 [ext_resource type="PackedScene" uid="uid://ch6uqin66i1v7" path="res://scenes/characters/fungy.tscn" id="1_hgrq5"]
 [ext_resource type="PackedScene" uid="uid://dbmmns6td4imf" path="res://utilities/main_camera.tscn" id="2_jom2r"]
 [ext_resource type="AudioStream" uid="uid://ctcummqyguj8a" path="res://assets/audios/music/track1.wav" id="3_3pyp3"]
-[ext_resource type="PackedScene" uid="uid://catwxcsxi3ekw" path="res://scenes/playable-levels/level1/lvl 2.tscn" id="3_262j4"]
 [ext_resource type="Script" path="res://scenes/playable-levels/level_manager.gd" id="4_8xk7p"]
-[ext_resource type="PackedScene" uid="uid://4xeak4fuju45" path="res://scenes/playable-levels/level1/lvl 3.tscn" id="4_cj5bn"]
-[ext_resource type="PackedScene" uid="uid://dvxesw5mdervj" path="res://scenes/playable-levels/level1/lvl 1.tscn" id="5_hgmnx"]
-[ext_resource type="PackedScene" uid="uid://cqopqx2lf2trs" path="res://scenes/playable-levels/level1/lvl 4.tscn" id="5_pdefo"]
-[ext_resource type="PackedScene" uid="uid://i4clebfs1kws" path="res://scenes/playable-levels/world2/lvl 1.tscn" id="6_md5ij"]
-[ext_resource type="PackedScene" uid="uid://cp2ndw85dcl3c" path="res://scenes/playable-levels/world2/lvl 2.tscn" id="7_wtbd7"]
-[ext_resource type="PackedScene" uid="uid://srm02tq7h4s2" path="res://scenes/playable-levels/world2/lvl 3.tscn" id="8_mt0iu"]
 [ext_resource type="PackedScene" uid="uid://rmpkj0x32kte" path="res://scenes/playable-levels/transition.tscn" id="9_cqhoa"]
+[ext_resource type="PackedScene" uid="uid://chyfqwlaa1un4" path="res://scenes/playable-levels/mobile_controls.tscn" id="17_s21h6"]
+[ext_resource type="PackedScene" uid="uid://ditawypuxmnay" path="res://scenes/game/menus/pause_menu.tscn" id="18_o25yj"]
+[ext_resource type="PackedScene" uid="uid://bcjg33hqrmgy4" path="res://scenes/playable-levels/main_layer.tscn" id="19_tvb1s"]
 
 [node name="Game" type="Node2D"]
 
 [node name="LevelManager" type="Node2D" parent="."]
 process_mode = 3
 script = ExtResource("4_8xk7p")
-all_levels = Array[PackedScene]([ExtResource("5_hgmnx"), ExtResource("3_262j4"), ExtResource("4_cj5bn"), ExtResource("5_pdefo"), ExtResource("6_md5ij"), ExtResource("7_wtbd7"), ExtResource("8_mt0iu")])
 
 [node name="Fungy" parent="." instance=ExtResource("1_hgrq5")]
 z_index = 10
@@ -33,10 +28,19 @@ node_to_follow = NodePath("../Fungy")
 
 [node name="Track1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_3pyp3")
-volume_db = -25.0
+volume_db = -4.0
 autoplay = true
+bus = &"Music"
+
+[node name="MobileControls" parent="." instance=ExtResource("17_s21h6")]
+visible = false
+
+[node name="MainLayer" parent="." instance=ExtResource("19_tvb1s")]
 
 [node name="Transition" parent="." instance=ExtResource("9_cqhoa")]
+visible = false
+
+[node name="PauseMenu" parent="." instance=ExtResource("18_o25yj")]
 visible = false
 
 [connection signal="animation_end" from="Transition" to="LevelManager" method="_on_transition_animation_end"]

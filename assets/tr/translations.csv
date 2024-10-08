@@ -1,8 +1,8 @@
 ﻿KEYS,en,es
 WORLD_1.NAME,Tutorial,Tutorial
-WORLD_2.NAME,,Pasaje de la muerte
-WORLD_3.NAME,,"Arriba, abajo, izquierda, derecha"
-WORLD_4.NAME,,Cambio de altura
+WORLD_2.NAME,Passage of Death,Pasaje de la muerte
+WORLD_3.NAME,"Up, Down, Left, Right","Arriba, abajo, izquierda, derecha"
+WORLD_4.NAME,Against Time,Contra el tiempo
 WORLD_5.NAME,,
 WORLD_6.NAME,,
 WORLD_7.NAME,,
@@ -12,3 +12,17 @@ WORLD_10.NAME,,
 WORLD_11.NAME,,
 WORLD_12.NAME,,
 SELECT_WORLD.TITLE,Select the world,Selecciona el mundo
+UI.PAUSE.RESUME,Resume,Continuar
+UI.PAUSE.RESTART,Restart,Reiniciar
+UI.PAUSE.EXIT,Exit,Salir
+UI.MAIN_MENU.START,Start,Comenzar
+UI.MAIN_MENU.SETTINGS,Settings,Ajustes
+UI.MAIN_MENU.QUIT,Quit,Salir
+UI.SETTINGS.VIDEO,Video,Video
+UI.SETTINGS.VIDEO.FULLSCREEN,Fullscreen,Pantalla completa
+UI.SETTINGS.VIDEO.BORDERLESS,Borderless,Sin bordes
+UI.SETTINGS.VIDEO.VSYNC,VSync,VSync
+UI.SETTINGS.AUDIO,Audio,Audio
+UI.SETTINGS.AUDIO.MASTER,Master,Master
+UI.SETTINGS.AUDIO.MUSIC,Music,Music
+UI.SETTINGS.AUDIO.SFX,SFX,SFX

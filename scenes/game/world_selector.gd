@@ -8,8 +8,13 @@ class_name WorldSelector extends CanvasLayer
 #@onready var world_5: TextureButton = $"MarginContainer/GridContainer/World 5"
 #@onready var world_6: TextureButton = $"MarginContainer/GridContainer/World 6"
 
+@onready var colorize: Control = $Colorize
+
 func _ready():
 	Global.reset_color()
+	
+	colorize.modulate = Global.default_tint
+	
 	world_1.pressed.connect(_go_to_world(1))
 	world_2.pressed.connect(_go_to_world(2))
 	world_3.pressed.connect(_go_to_world(3))

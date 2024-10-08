@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw823degnri5o"]
+
+[ext_resource type="Texture2D" uid="uid://ce3ixaomu5xjm" path="res://assets/sprites/utilities/platform_marker.png" id="1_o1sbv"]
+
+[node name="PlatformMarker" type="Sprite2D"]
+texture = ExtResource("1_o1sbv")

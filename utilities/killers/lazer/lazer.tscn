@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dinqyo55m765c"]
+[gd_scene load_steps=4 format=3 uid="uid://dinqyo55m765c"]
 
 [ext_resource type="Script" path="res://utilities/killers/lazer/lazer.gd" id="1_45mnu"]
+[ext_resource type="PackedScene" uid="uid://cvtysjv237a8q" path="res://utilities/killers/lazer/lazer_off_sound.tscn" id="2_gwb5o"]
+[ext_resource type="PackedScene" uid="uid://b37rvewnq6wut" path="res://utilities/killers/lazer/lazer_on_sound.tscn" id="3_8n4df"]
 
 [node name="Lazer" type="Node2D"]
 script = ExtResource("1_45mnu")
+
+[node name="LazerOffSound" parent="." instance=ExtResource("2_gwb5o")]
+
+[node name="LazerOnSound" parent="." instance=ExtResource("3_8n4df")]

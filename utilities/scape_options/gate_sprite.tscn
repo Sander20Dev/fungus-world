@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://q0bqbsv86ra8"]
+
+[ext_resource type="Texture2D" uid="uid://dhxq06lmrf34y" path="res://assets/sprites/utilities/gate.png" id="1_fskus"]
+
+[node name="GateSprite" type="Sprite2D"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_fskus")
+vframes = 4

@@ -1,32 +1,52 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4n1hhhsjma6r"]
+[gd_scene load_steps=11 format=3 uid="uid://d4n1hhhsjma6r"]
 
 [ext_resource type="Texture2D" uid="uid://dyp35rfg16yll" path="res://assets/sprites/ui/world-selector/w1-normal.png" id="1_cvqt7"]
 [ext_resource type="Script" path="res://scenes/game/world_selector.gd" id="1_i7a7c"]
+[ext_resource type="PackedScene" uid="uid://4dibqrmicnp" path="res://scenes/game/ui_utils/go_to_back.tscn" id="2_73i00"]
 [ext_resource type="Texture2D" uid="uid://bew6ouu5gjmam" path="res://assets/sprites/ui/world-selector/w1-pressed.png" id="2_dblsy"]
+[ext_resource type="PackedScene" uid="uid://dbqb5wiqrmafq" path="res://scenes/game/main_scene.tscn" id="3_mbs6b"]
 [ext_resource type="Texture2D" uid="uid://cgokdjia5w6y6" path="res://assets/sprites/ui/world-selector/w2-normal.png" id="3_pbgbk"]
 [ext_resource type="Texture2D" uid="uid://dcf1i1ccrr4np" path="res://assets/sprites/ui/world-selector/w2-pressed.png" id="4_mxu3e"]
-[ext_resource type="Texture2D" uid="uid://b353vodhhe8yw" path="res://assets/sprites/ui/world-selector/w3-normal.png" id="5_7at85"]
-[ext_resource type="Texture2D" uid="uid://m1luqerwd3le" path="res://assets/sprites/ui/world-selector/w3-pressed.png" id="6_ps6v8"]
+[ext_resource type="Texture2D" uid="uid://b353vodhhe8yw" path="res://assets/sprites/ui/world-selector/w3-normal.png" id="6_nco27"]
+[ext_resource type="Texture2D" uid="uid://m1luqerwd3le" path="res://assets/sprites/ui/world-selector/w3-pressed.png" id="7_45p75"]
 [ext_resource type="Texture2D" uid="uid://bhoqoe2067kfb" path="res://assets/sprites/ui/world-selector/unlocked-level.png" id="7_k6o6w"]
 
 [node name="WorldSelector" type="CanvasLayer"]
 script = ExtResource("1_i7a7c")
 
-[node name="Title" type="Label" parent="."]
+[node name="Colorize" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GoToBack" parent="Colorize" instance=ExtResource("2_73i00")]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 96.0
+offset_bottom = 96.0
+scale = Vector2(2, 2)
+back_scene = ExtResource("3_mbs6b")
+
+[node name="Title" type="Label" parent="Colorize"]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -248.5
+offset_left = -316.0
 offset_top = 64.0
-offset_right = 248.5
-offset_bottom = 123.0
+offset_right = 316.0
+offset_bottom = 141.0
 grow_horizontal = 2
 theme_type_variation = &"TitleLabel"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "SELECT_WORLD.TITLE"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
-metadata/_edit_group_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 7
@@ -71,8 +91,8 @@ stretch_mode = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource("5_7at85")
-texture_pressed = ExtResource("6_ps6v8")
+texture_normal = ExtResource("6_nco27")
+texture_pressed = ExtResource("7_45p75")
 stretch_mode = 0
 
 [node name="World 4" type="TextureButton" parent="MarginContainer/GridContainer"]

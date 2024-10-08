@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://blf8ccwplw02e"]
+[gd_scene load_steps=3 format=3 uid="uid://blf8ccwplw02e"]
+
+[ext_resource type="Script" path="res://views/win_screen.gd" id="1_tuemp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a1u1x"]
-font_size = 48
+font_size = 96
 font_color = Color(0.6, 0.878431, 0.462745, 1)
 
 [node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_tuemp")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8
@@ -13,9 +16,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -373.5
-offset_top = -58.0
+offset_top = -218.0
 offset_right = 373.5
-offset_bottom = 58.0
+offset_bottom = -102.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -23,3 +26,21 @@ text = "END OF THE DEMO"
 label_settings = SubResource("LabelSettings_a1u1x")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(0.632198, 0.927332, 0.618902, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 57.0
+offset_right = 90.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Volver al Menú"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

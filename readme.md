@@ -1,70 +1,81 @@
-# Fungus World
+<div align="center">
+  <a href="https://github.com/Sander20Dev/fungus-world/">
+	  <img src="icon.png" alt="Logo" width="100" height="100">
+  </a>
+  <h3 align="center">FUNGUS_WORLD</h3>
+</div>
 
-## Descripción
+[![Github License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Sander20Dev/fungus-world/blob/main/LICENSE)
+[![Godot Engine](https://img.shields.io/badge/godot-4.0-blue.svg)](https://godotengine.org/)
+[![Itch.io](https://img.shields.io/badge/itch.io-FUNGUS_WORLD-red.svg)](https://sander20dev.itch.io/fungus-world)
 
-**Fungus World** es un juego de plataformas en 2D con estética de **hongos** en pixel art. En este juego, los jugadores se embarcan en una aventura a través de niveles llenos de obstáculos, mecánicas únicas y secretos escondidos. A medida que avanzan, los jugadores aprenderán nuevas habilidades y se enfrentarán a retos más complejos.
+## Screenshots
 
-## Características principales
+(To be filled in later with screenshots)
 
-- **Estilo visual:** Pixel art simple pero colorido, con una temática de hongos y ambientes naturales.
-- **Mecánicas de juego:**
-  - Caminar, saltar y agacharse.
-  - Mecánicas únicas en cada nivel (disparos, cambios de tamaño, plataformas móviles, etc.).
-- **Niveles:** 12 niveles, cada uno dividido en 4 subniveles:
-  - [x] **Nivel 1:** Tutorial, aprender a caminar, agacharse y saltar.
-  - [ ] **Nivel 2:** Aprender a evitar puas y láseres capacez de reiniciar el nivel.
-  - [ ] **Nivel 3:** Aprender a usar plataformas móviles verticales y horizontales.
-  - [ ] **Nivel 4-12:** Cada nivel introduce una nueva mecánica que se explora en los primeros 3 subniveles y culmina en un reto en el último.
+---
 
-## Mecánicas del juego
+Welcome to our **FUNGUS_WORLD**, where your goal is to complete a series of levels, each filled with unique challenges and mechanics. The game currently features **12 levels**, spread across **4 different worlds**. Each world introduces new mechanics while reusing previous ones to create a progressively more challenging experience.
 
-1. **Caminar y saltar:** Las acciones básicas para navegar el mundo.
-2. **Agacharse:** Para moverse por espacios pequeños.
-3. **Mecánicas adicionales:**
-   - Redimensionar objetos.
-   - Disparar para romper cajas.
-   - Deslizarse por debajo de obstáculos.
-   - Escalar paredes.
-   - Volar con una nave.
+## Game Overview
 
-## Instalación
+- **Genre**: Platformer
+- **Style**: Simple, minimalist design with pixel art aesthetics
+- **Current Levels**: 12 (3 worlds, each consisting of 4 levels)
+- **Total Worlds Planned**: 12 (48 levels)
 
-1. Clona este repositorio:
+## Worlds and Mechanics
+
+Each world in the game consists of 4 levels, and every world has its own theme and unique mechanics. While new challenges are introduced in each world, mechanics from previous worlds are reused, keeping gameplay fresh and engaging.
+
+Here’s a breakdown of the current worlds:
+
+### World 1: Tutorial
+
+- **Learn basic moves**: Walking, crouching, and jumping.
+- A beginner-friendly introduction to core movement mechanics.
+
+### World 2: Passage of Death
+
+- **Dangerous hazards**: Avoid spikes and lasers.
+- Precision and timing are key to surviving this perilous world.
+
+### World 3: Up, Down, Left, Right
+
+- **Complex platforming**: Moving platforms, springs, doors, and falling spikes.
+- Master directional challenges and navigate tricky platform combinations.
+
+### World 4: Against Time
+
+- **Time-based challenges**: Timed levels, breakable blocks, timed buttons, and teleporters.
+- Race against the clock and carefully manage timed mechanics to succeed.
+
+## Future Plans
+
+Our goal is to expand the game to include **12 worlds**, each with 4 levels, totaling 48 levels. Each new world will introduce additional mechanics and surprises to keep the gameplay experience evolving.
+
+## Visual Style
+
+The game is designed with a **simple, minimalist pixel art** style, focusing on clean visuals that complement the platforming mechanics.
+
+## How to Play
+
+1. Open the game in your browser from [itch.io](https://sander20dev.itch.io/fungus-world).
+2. Enjoy the game!
+
+---
+
+## Project Installation
+
+1. Clone the repository to your local machine.
+
    ```bash
    git clone https://github.com/Sander20Dev/fungus-world.git
    ```
-2. Abre el proyecto en **Godot Engine** (versión mínima recomendada: 4.x).
-3. Ejecuta el proyecto desde el editor.
 
-## Controles
+2. Open the project in your preferred Godot editor. We recommend using Godot 4 or newer.
+3. Run the game in your editor.
 
-- **AD**: Mover al personaje.
-- **W**: Saltar.
-- **S**: Agacharse.
-- **Click izquierdo**: Disparar (cuando la mecánica esté habilitada).
+# License
 
-## Roadmap
-
-- [x] Implementación de movimiento básico (caminar, saltar, agacharse).
-- [x] Diseño de niveles y estructura de subniveles.
-- [ ] Integración de mecánicas adicionales (Redimensionar objetos, disparos, plataformas móviles, etc.).
-- [ ] Desarrollo de enemigos y obstáculos dinámicos.
-- [ ] Pulido visual y efectos.
-
-## Contribuciones
-
-¡Contribuciones, ideas y sugerencias son bienvenidas! Por favor, abre un **issue** para reportar bugs o proponer mejoras.
-
-## Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
-
-## Secciones que puedes personalizar:
-
-- **Diseño de los TILESETS:** Tiene la libertad de modificar el TILESET a voluntad y colaborar con el juego mandando sus propios diseños.
-- **Mecánicas adicionales:** Mediante **issues** puede solicitar y ayudar a idear nuevas mecánicas para el juego.
-
-# Capturas
-
-![Gameplay ScreenShoot 1](./images/image1.png)
-![Gameplay ScreenShoot 2](./images/image2.png)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

@@ -1,0 +1,148 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvd38j5wrip7n"]
+
+[ext_resource type="PackedScene" uid="uid://4dibqrmicnp" path="res://scenes/game/ui_utils/go_to_back.tscn" id="1_hkcyk"]
+[ext_resource type="Script" path="res://scenes/game/settings_layer.gd" id="1_jp3tu"]
+[ext_resource type="PackedScene" uid="uid://dbqb5wiqrmafq" path="res://scenes/game/main_scene.tscn" id="2_w8do5"]
+
+[node name="SettingsLayer" type="CanvasLayer"]
+script = ExtResource("1_jp3tu")
+
+[node name="GoToBack" parent="." instance=ExtResource("1_hkcyk")]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 96.0
+offset_bottom = 96.0
+scale = Vector2(2, 2)
+back_scene = ExtResource("2_w8do5")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 192.0
+offset_top = 48.0
+offset_right = 907.0
+offset_bottom = 125.0
+theme_type_variation = &"TitleLabel"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "UI.MAIN_MENU.SETTINGS"
+
+[node name="VideoSubtitle" type="Label" parent="."]
+offset_left = 224.0
+offset_top = 176.0
+offset_right = 638.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "UI.SETTINGS.VIDEO"
+horizontal_alignment = 1
+
+[node name="HVideo" type="HBoxContainer" parent="."]
+offset_left = 240.0
+offset_top = 240.0
+offset_right = 912.0
+offset_bottom = 373.0
+theme_override_constants/separation = 32
+
+[node name="Labels" type="VBoxContainer" parent="HVideo"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="HVideo/Labels"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "UI.SETTINGS.VIDEO.FULLSCREEN"
+
+[node name="Label2" type="Label" parent="HVideo/Labels"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "UI.SETTINGS.VIDEO.BORDERLESS"
+
+[node name="Label3" type="Label" parent="HVideo/Labels"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "UI.SETTINGS.VIDEO.VSYNC"
+
+[node name="CheckBoxs" type="VBoxContainer" parent="HVideo"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Fullscreen" type="CheckBox" parent="HVideo/CheckBoxs"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Borderless" type="CheckBox" parent="HVideo/CheckBoxs"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="VSync" type="CheckBox" parent="HVideo/CheckBoxs"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="AudioSubtitle" type="Label" parent="."]
+offset_left = 224.0
+offset_top = 416.0
+offset_right = 638.0
+offset_bottom = 475.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "UI.SETTINGS.AUDIO"
+horizontal_alignment = 1
+
+[node name="HAudio" type="HBoxContainer" parent="."]
+offset_left = 240.0
+offset_top = 480.0
+offset_right = 912.0
+offset_bottom = 613.0
+theme_override_constants/separation = 32
+
+[node name="Labels" type="VBoxContainer" parent="HAudio"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="HAudio/Labels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "UI.SETTINGS.AUDIO.MASTER"
+
+[node name="Label2" type="Label" parent="HAudio/Labels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "UI.SETTINGS.AUDIO.MUSIC"
+
+[node name="Label3" type="Label" parent="HAudio/Labels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "UI.SETTINGS.AUDIO.SFX"
+
+[node name="Sliders" type="VBoxContainer" parent="HAudio"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="MasterSlider" type="HSlider" parent="HAudio/Sliders"]
+layout_mode = 2
+size_flags_vertical = 6
+min_value = -80.0
+max_value = 0.0
+
+[node name="MusicSlider" type="HSlider" parent="HAudio/Sliders"]
+layout_mode = 2
+size_flags_vertical = 6
+min_value = -80.0
+max_value = 0.0
+
+[node name="SfxSlider" type="HSlider" parent="HAudio/Sliders"]
+layout_mode = 2
+size_flags_vertical = 6
+min_value = -80.0
+max_value = 0.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[connection signal="toggled" from="HVideo/CheckBoxs/Fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="toggled" from="HVideo/CheckBoxs/Borderless" to="." method="_on_borderless_toggled"]
+[connection signal="toggled" from="HVideo/CheckBoxs/VSync" to="." method="_on_v_sync_toggled"]
+[connection signal="value_changed" from="HAudio/Sliders/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="HAudio/Sliders/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="HAudio/Sliders/SfxSlider" to="." method="_on_sfx_slider_value_changed"]

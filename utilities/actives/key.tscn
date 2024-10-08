@@ -64,8 +64,9 @@ shape = SubResource("CircleShape2D_yd4y5")
 
 [node name="KeyCatch" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_afunr")
-volume_db = 15.0
+volume_db = 24.0
 pitch_scale = 1.25
+bus = &"Sfx"
 
 [node name="TimerKill" type="Timer" parent="."]
 wait_time = 0.96

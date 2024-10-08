@@ -22,4 +22,6 @@ shape = SubResource("RectangleShape2D_awy7p")
 
 [node name="DoorOpening" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_k5nig")
+volume_db = 10.0
 pitch_scale = 2.0
+bus = &"Sfx"

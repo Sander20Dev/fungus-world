@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bww65soi4g8ky"]
+
+[ext_resource type="Texture2D" uid="uid://dsp3yl672k3wq" path="res://assets/sprites/utilities/big_spike.png" id="1_bwsut"]
+[ext_resource type="Script" path="res://utilities/killers/falling_spike.gd" id="1_ywjsu"]
+
+[node name="FallingSpike" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 17
+script = ExtResource("1_ywjsu")
+
+[node name="BigSpike" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_bwsut")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, 32)
+target_position = Vector2(0, 320)
+collision_mask = 19
+
+[node name="Detector" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 19
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Detector"]
+polygon = PackedVector2Array(-28, -28, 0, -12, 28, -28, 0, 28)
+
+[connection signal="body_entered" from="Detector" to="." method="_on_detector_body_entered"]

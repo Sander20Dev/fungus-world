@@ -32,5 +32,4 @@ func _detect_collision(body: Node2D):
 	if LevelManager.instance.current_level_states.is_dead: return
 	
 	if body is Fungy:
-		#print(body.position)
 		LevelManager.instance.current_level_states.kill()

@@ -1,0 +1,145 @@
+[gd_scene load_steps=9 format=3 uid="uid://dyqriwugybd8"]
+
+[ext_resource type="Script" path="res://utilities/spring.gd" id="1_ajfa3"]
+[ext_resource type="Texture2D" uid="uid://clitqhh34m8cv" path="res://assets/sprites/utilities/spring_disabled.png" id="2_s05y0"]
+[ext_resource type="AudioStream" uid="uid://cbdc4yakip7dg" path="res://assets/audios/sfx/spring.wav" id="3_fxcaw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkkb0"]
+size = Vector2(64, 64)
+
+[sub_resource type="Animation" id="Animation_aucwt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_5psc4"]
+resource_name = "compression"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.07, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 16), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.07, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.5), Vector2(1, 1)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.07),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_jump"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.04),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q8rui"]
+_data = {
+"RESET": SubResource("Animation_aucwt"),
+"compression": SubResource("Animation_5psc4")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptly0"]
+size = Vector2(64, 72)
+
+[node name="Spring" type="Node2D"]
+script = ExtResource("1_ajfa3")
+
+[node name="SpringBody" type="StaticBody2D" parent="."]
+
+[node name="Spring" type="Sprite2D" parent="SpringBody"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_s05y0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpringBody"]
+shape = SubResource("RectangleShape2D_dkkb0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SpringBody"]
+libraries = {
+"": SubResource("AnimationLibrary_q8rui")
+}
+
+[node name="SpringDetector" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpringDetector"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_ptly0")
+
+[node name="Delay" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_fxcaw")
+bus = &"Sfx"
+
+[connection signal="body_entered" from="SpringDetector" to="." method="_on_spring_detector_body_entered"]
+[connection signal="body_exited" from="SpringDetector" to="." method="_on_spring_detector_body_exited"]
+[connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]

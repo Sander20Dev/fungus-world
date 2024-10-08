@@ -1,24 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbqb5wiqrmafq"]
+[gd_scene load_steps=3 format=3 uid="uid://dbqb5wiqrmafq"]
 
 [ext_resource type="Script" path="res://scenes/game/main_scene.gd" id="1_bxdsg"]
-[ext_resource type="Texture2D" uid="uid://cblhds654l7bo" path="res://assets/sprites/ui/play-button/normal.png" id="2_khkf7"]
-[ext_resource type="Texture2D" uid="uid://ceaxxpljtbfg6" path="res://assets/sprites/ui/play-button/active.png" id="3_ale5k"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kmdhi"]
 font_size = 72
-font_color = Color(0.6, 0.878431, 0.462745, 1)
 outline_size = 8
-outline_color = Color(0.356863, 0.752941, 0.188235, 1)
-
-[sub_resource type="InputEventKey" id="InputEventKey_dyer8"]
-device = -1
-keycode = 4194309
-
-[sub_resource type="Shortcut" id="Shortcut_eygcp"]
-events = [SubResource("InputEventKey_dyer8")]
+outline_color = Color(0.72, 0.72, 0.72, 1)
 
 [node name="MainScene" type="CanvasLayer"]
 script = ExtResource("1_bxdsg")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8
@@ -27,9 +19,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -232.0
-offset_top = -100.0
+offset_top = -148.0
 offset_right = 233.0
-offset_bottom = -12.0
+offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Fungus World"
@@ -37,21 +29,61 @@ label_settings = SubResource("LabelSettings_kmdhi")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="TextureButton" parent="."]
+[node name="PlayButton" type="Button" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -94.0
-offset_top = 21.0
-offset_right = 94.0
-offset_bottom = 97.0
+offset_left = -128.0
+offset_top = -23.0
+offset_right = 128.0
+offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
-shortcut = SubResource("Shortcut_eygcp")
-texture_normal = ExtResource("2_khkf7")
-texture_pressed = ExtResource("3_ale5k")
-stretch_mode = 4
+text = "UI.MAIN_MENU.START"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="SettingsButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 41.0
+offset_right = 128.0
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "UI.MAIN_MENU.SETTINGS"
+clip_text = true
+
+[node name="QuitButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 105.0
+offset_right = 128.0
+offset_bottom = 151.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"FlatButton"
+text = "UI.MAIN_MENU.QUIT"
+
+[node name="IsMobile" type="CheckButton" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -227.0
+offset_top = -217.0
+offset_right = 227.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Modo movil/celular"

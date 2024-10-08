@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://ul868t65jwwo"]
+[gd_scene load_steps=4 format=3 uid="uid://ul868t65jwwo"]
 
-[ext_resource type="Script" path="res://utilities/killers/lazer/active_lazer.gd" id="1_j8hqg"]
+[ext_resource type="Script" path="res://utilities/killers/lazer/active_lazer.gd" id="1_8e5xo"]
+[ext_resource type="PackedScene" uid="uid://cvtysjv237a8q" path="res://utilities/killers/lazer/lazer_off_sound.tscn" id="2_e3fli"]
+[ext_resource type="PackedScene" uid="uid://b37rvewnq6wut" path="res://utilities/killers/lazer/lazer_on_sound.tscn" id="3_ldtia"]
 
 [node name="ActiveLazer" type="Node2D"]
-script = ExtResource("1_j8hqg")
+script = ExtResource("1_8e5xo")
+
+[node name="LazerOffSound" parent="." instance=ExtResource("2_e3fli")]
+volume_db = 10.0
+max_distance = 8000.0
+
+[node name="LazerOnSound" parent="." instance=ExtResource("3_ldtia")]
+volume_db = 10.0

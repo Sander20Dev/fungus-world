@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b37rvewnq6wut"]
+
+[ext_resource type="AudioStream" uid="uid://ceb1ctsxy0hek" path="res://assets/audios/sfx/lazer_on.wav" id="1_5godw"]
+
+[node name="LazerOnSound" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_5godw")
+volume_db = 1.0
+pitch_scale = 0.5
+max_distance = 512.0
+bus = &"Sfx"

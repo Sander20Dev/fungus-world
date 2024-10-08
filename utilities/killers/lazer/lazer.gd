@@ -4,6 +4,8 @@ class_name Lazer
 extends Node2D
 
 const LAZER = preload("res://utilities/killers/lazer/raw_lazer.tscn")
+@onready var lazer_off_sound: AudioStreamPlayer2D = $LazerOffSound
+@onready var lazer_on_sound: AudioStreamPlayer2D = $LazerOnSound
 
 @export var lazers_count: int = 1 :
 	set(val):
@@ -22,10 +24,16 @@ const LAZER = preload("res://utilities/killers/lazer/raw_lazer.tscn")
 var disabled = false :
 	set(val):
 		disabled = val
+		if lazer_off_sound and val:
+			lazer_off_sound.play()
+		if lazer_on_sound and not val:
+			lazer_on_sound.play()
 		for lazer in _get_all_lazers():
 			lazer.disabled = val
 
 func _ready() -> void:
+	if not lazer_off_sound: lazer_off_sound = $LazerOffSound
+	if not lazer_on_sound: lazer_on_sound = $LazerOnSound
 	for lazer in _get_all_lazers():
 		if lazer is RawLazer:
 			lazer.setup()

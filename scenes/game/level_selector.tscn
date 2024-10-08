@@ -26,6 +26,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="GoToBack" parent="Colorize" instance=ExtResource("2_npthv")]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 64.0
 offset_right = 96.0

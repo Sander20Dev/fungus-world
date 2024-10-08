@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://beyaj2jgdut5n"]
+
+[ext_resource type="Texture2D" uid="uid://uf52cu0rto52" path="res://assets/sprites/utilities/v_platform.png" id="1_obkds"]
+[ext_resource type="Script" path="res://utilities/platforms/v_platform.gd" id="1_u00ir"]
+[ext_resource type="AudioStream" uid="uid://dx3xr31o6v3t2" path="res://assets/audios/sfx/engine_active.wav" id="3_tvvyn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltaej"]
+size = Vector2(168, 16)
+
+[node name="VPlatform" type="Node2D"]
+script = ExtResource("1_u00ir")
+metadata/_edit_group_ = true
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Platform" type="StaticBody2D" parent="."]
+collision_layer = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_obkds")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+shape = SubResource("RectangleShape2D_ltaej")
+
+[node name="Delay" type="Timer" parent="."]
+one_shot = true
+
+[node name="EngineActive" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_tvvyn")
+volume_db = 8.0
+pitch_scale = 0.75
+max_distance = 1600.0
+bus = &"Sfx"
+
+[connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]
+[connection signal="finished" from="EngineActive" to="." method="_on_engine_active_audio_finished"]
