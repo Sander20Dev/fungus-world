@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bww65soi4g8ky"]
+[gd_scene load_steps=5 format=3 uid="uid://bww65soi4g8ky"]
 
 [ext_resource type="Texture2D" uid="uid://dsp3yl672k3wq" path="res://assets/sprites/utilities/big_spike.png" id="1_bwsut"]
 [ext_resource type="Script" path="res://utilities/killers/falling_spike.gd" id="1_ywjsu"]
+[ext_resource type="AudioStream" uid="uid://dv0a0jqmi3moe" path="res://assets/audios/sfx/big_spike_falling.wav" id="3_jbf1x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35447"]
+size = Vector2(32, 10)
 
 [node name="FallingSpike" type="CharacterBody2D"]
 collision_layer = 4
@@ -23,5 +27,12 @@ collision_mask = 19
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Detector"]
 polygon = PackedVector2Array(-28, -28, 0, -12, 28, -28, 0, 28)
+
+[node name="FallingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_jbf1x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -21)
+shape = SubResource("RectangleShape2D_35447")
 
 [connection signal="body_entered" from="Detector" to="." method="_on_detector_body_entered"]

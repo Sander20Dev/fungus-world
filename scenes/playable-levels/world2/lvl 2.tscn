@@ -159,8 +159,9 @@ door = NodePath("../Door")
 position = Vector2(192, 1264)
 
 [node name="Label" type="Label" parent="." groups=["Guides"]]
-offset_left = 672.0
+offset_left = 573.0
 offset_top = 848.0
-offset_right = 1006.0
+offset_right = 1014.0
 offset_bottom = 887.0
 text = "GUIDE_MESSAGES.DONT_TOUCH"
+horizontal_alignment = 2

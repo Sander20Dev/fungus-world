@@ -1,6 +1,7 @@
 class_name FallingSpike extends CharacterBody2D
 
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
+@onready var falling_sound: AudioStreamPlayer2D = $FallingSound
 
 var active = false
 
@@ -9,6 +10,7 @@ func _physics_process(delta: float) -> void:
 		var collide = ray_cast_2d.get_collider()
 		if collide is Fungy:
 			active = true
+			falling_sound.play()
 	
 	if not active: return
 	

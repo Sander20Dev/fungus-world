@@ -12,26 +12,26 @@ script = ExtResource("1_jp3tu")
 
 [node name="GoToBack" parent="." instance=ExtResource("1_hkcyk")]
 offset_left = 64.0
-offset_top = 64.0
+offset_top = 48.0
 offset_right = 96.0
-offset_bottom = 96.0
+offset_bottom = 80.0
 scale = Vector2(2, 2)
 back_scene = ExtResource("2_w8do5")
 
 [node name="Title" type="Label" parent="."]
 offset_left = 192.0
-offset_top = 48.0
+offset_top = 32.0
 offset_right = 907.0
-offset_bottom = 125.0
+offset_bottom = 109.0
 theme_type_variation = &"TitleLabel"
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "UI.MAIN_MENU.SETTINGS"
 
 [node name="VideoSubtitle" type="Label" parent="."]
 offset_left = 224.0
-offset_top = 128.0
+offset_top = 112.0
 offset_right = 638.0
-offset_bottom = 187.0
+offset_bottom = 171.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
 text = "UI.SETTINGS.VIDEO"
@@ -39,9 +39,9 @@ horizontal_alignment = 1
 
 [node name="HVideo" type="HBoxContainer" parent="."]
 offset_left = 240.0
-offset_top = 192.0
+offset_top = 176.0
 offset_right = 912.0
-offset_bottom = 325.0
+offset_bottom = 309.0
 theme_override_constants/separation = 32
 
 [node name="Labels" type="VBoxContainer" parent="HVideo"]
@@ -84,9 +84,9 @@ size_flags_vertical = 2
 
 [node name="AudioSubtitle" type="Label" parent="."]
 offset_left = 224.0
-offset_top = 368.0
+offset_top = 336.0
 offset_right = 638.0
-offset_bottom = 427.0
+offset_bottom = 395.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
 text = "UI.SETTINGS.AUDIO"
@@ -94,9 +94,9 @@ horizontal_alignment = 1
 
 [node name="HAudio" type="HBoxContainer" parent="."]
 offset_left = 240.0
-offset_top = 432.0
+offset_top = 400.0
 offset_right = 912.0
-offset_bottom = 565.0
+offset_bottom = 533.0
 theme_override_constants/separation = 32
 
 [node name="Labels" type="VBoxContainer" parent="HAudio"]
@@ -134,9 +134,9 @@ layout_mode = 2
 
 [node name="LanguageSubtitle" type="Label" parent="."]
 offset_left = 224.0
-offset_top = 608.0
-offset_right = 638.0
-offset_bottom = 667.0
+offset_top = 560.0
+offset_right = 730.0
+offset_bottom = 619.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
 text = "UI.SETTINGS.LANGUAGE"
@@ -144,18 +144,18 @@ horizontal_alignment = 1
 
 [node name="Change" type="Label" parent="."]
 offset_left = 240.0
-offset_top = 671.0
+offset_top = 623.0
 offset_right = 711.0
-offset_bottom = 710.0
+offset_bottom = 662.0
 size_flags_vertical = 6
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "UI.SETTINGS.LANGUAGE.CHANGE"
 
 [node name="LanguageSelector" type="OptionButton" parent="."]
 offset_left = 256.0
-offset_top = 719.0
+offset_top = 671.0
 offset_right = 640.0
-offset_bottom = 765.0
+offset_bottom = 717.0
 item_count = 2
 popup/item_0/text = "UI.SETTINGS.LANGUAGE.ENGLISH"
 popup/item_1/text = "UI.SETTINGS.LANGUAGE.SPANISH"

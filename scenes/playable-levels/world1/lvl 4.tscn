@@ -25,6 +25,7 @@ offset_top = 1104.0
 offset_right = 1568.0
 offset_bottom = 1143.0
 text = "GUIDE_MESSAGES.IF_YOU_SNEAK"
+horizontal_alignment = 1
 
 [node name="Door" parent="." instance=ExtResource("3_6e20u")]
 position = Vector2(960, 576)

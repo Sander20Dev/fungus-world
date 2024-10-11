@@ -1,5 +1,4 @@
 extends CanvasLayer
-@onready var is_mobile: CheckButton = $IsMobile
 @onready var canvas_modulate: CanvasModulate = $CanvasModulate
 
 @onready var play_button: Button = $PlayButton

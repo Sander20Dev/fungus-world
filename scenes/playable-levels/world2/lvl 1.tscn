@@ -90,8 +90,9 @@ position = Vector2(96, 776)
 position = Vector2(0, 1312)
 
 [node name="Label" type="Label" parent="." groups=["Guides"]]
-offset_left = 272.0
+offset_left = 133.0
 offset_top = 752.0
-offset_right = 597.0
+offset_right = 893.0
 offset_bottom = 791.0
 text = "GUIDE_MESSAGES.AVOID_TOUCHING"
+horizontal_alignment = 1

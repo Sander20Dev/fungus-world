@@ -11,7 +11,9 @@
 
 ## Screenshots
 
-(To be filled in later with screenshots)
+![World 1](.github/screenshots/w1.png)
+![World 2](.github/screenshots/w2.png)
+![World 3](.github/screenshots/w3.png)
 
 ---
 

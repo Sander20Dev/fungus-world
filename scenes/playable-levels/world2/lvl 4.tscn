@@ -106,11 +106,12 @@ position = Vector2(2080, 384)
 position = Vector2(192, 224)
 
 [node name="Label" type="Label" parent="." groups=["Guides"]]
-offset_left = 2288.0
+offset_left = 2208.0
 offset_top = 864.0
-offset_right = 2579.0
+offset_right = 2770.0
 offset_bottom = 903.0
 text = "GUIDE_MESSAGES.FIND_ANOTHER_PATH"
+horizontal_alignment = 2
 
 [node name="Key" parent="." node_paths=PackedStringArray("door") instance=ExtResource("8_hpq6d")]
 position = Vector2(3376, 512)

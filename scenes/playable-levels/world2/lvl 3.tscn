@@ -259,3 +259,4 @@ offset_top = 592.0
 offset_right = 1776.0
 offset_bottom = 631.0
 text = "GUIDE_MESSAGES.BUTTON"
+horizontal_alignment = 1

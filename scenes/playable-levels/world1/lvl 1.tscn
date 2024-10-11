@@ -50,9 +50,9 @@ autowrap_mode = 0
 
 [node name="SText" type="RichTextLabel" parent="." groups=["Guides"]]
 offset_left = 954.0
-offset_top = 607.0
+offset_top = 608.0
 offset_right = 1353.0
-offset_bottom = 646.0
+offset_bottom = 647.0
 bbcode_enabled = true
 text = "GUIDE_MESSAGES.S"
 fit_content = true
@@ -60,9 +60,9 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="KeyText" type="RichTextLabel" parent="." groups=["Guides"]]
-offset_left = 2598.0
+offset_left = 2464.0
 offset_top = 204.0
-offset_right = 2787.0
+offset_right = 2912.0
 offset_bottom = 243.0
 bbcode_enabled = true
 text = "GUIDE_MESSAGES.TAKE_A_KEY"
@@ -71,10 +71,10 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="DoorText" type="RichTextLabel" parent="." groups=["Guides"]]
-offset_left = 3202.0
-offset_top = 782.0
-offset_right = 3598.0
-offset_bottom = 821.0
+offset_left = 3200.0
+offset_top = 770.0
+offset_right = 3584.0
+offset_bottom = 809.0
 bbcode_enabled = true
 text = "GUIDE_MESSAGES.ENTER"
 fit_content = true

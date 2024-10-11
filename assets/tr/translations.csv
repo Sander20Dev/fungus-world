@@ -36,9 +36,9 @@ UI.SETTINGS.LANGUAGE.SPANISH,Spanish,Español
 UI.SETTINGS.LANGUAGE.RESTART,Please restart the game for the change to take effect.,Por favor reinicia el juego para que el cambio tenga efecto.
 GUIDE_MESSAGES.A_D,Press [img]res://assets/sprites/keys/a.png[/img] or [img]res://assets/sprites/keys/d.png[/img] to walk,Presiona [img]res://assets/sprites/keys/a.png[/img] o [img]res://assets/sprites/keys/d.png[/img] para caminar
 GUIDE_MESSAGES.W,Press [img]res://assets/sprites/keys/w.png[/img] to jump,Presiona [img]res://assets/sprites/keys/w.png[/img] para saltar
-GUIDE_MESSAGES.S,Press [img]res://assets/sprites/keys/s.png[/img] to sneak,Presiona [img]res://assets/sprites/keys/s.png[/img] para agacharte
-GUIDE_MESSAGES.TAKE_A_KEY,Take the key,Toma la llave
-GUIDE_MESSAGES.ENTER,Press [img]res://assets/sprites/keys/s.png[/img] to enter,Presiona [img]res://assets/sprites/keys/s.png[/img] para entrar
+GUIDE_MESSAGES.S,[center]Press [img]res://assets/sprites/keys/s.png[/img] to sneak[/center],[center]Presiona [img]res://assets/sprites/keys/s.png[/img] para agacharte[/center]
+GUIDE_MESSAGES.TAKE_A_KEY,[center]Take the key[/center],[center]Toma la llave[/center]
+GUIDE_MESSAGES.ENTER,[center]Press [img]res://assets/sprites/keys/s.png[/img] to enter[/center],[center]Presiona [img]res://assets/sprites/keys/s.png[/img] para entrar[/center]
 GUIDE_MESSAGES.AVOID_FALLING,Avoid falling. Jump high.,Evita caer. Salta bien.
 GUIDE_MESSAGES.TAKE_A_KEY_AND_ENTER,Take the key and go to the door,Toma la llave y ve a la puerta
 GUIDE_MESSAGES.FIND_KEY,Search the key,Busca la llave
