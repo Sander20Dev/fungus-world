@@ -6,6 +6,7 @@ func _ready():
 	_setup_btn($Move/Right)
 	_setup_btn($Actions/Jump)
 	_setup_btn($Actions/Sneak)
+	_setup_btn($Actions/Interact)
 
 func _setup_btn(btn: TouchScreenButton):
 	btn_released(btn).call()
@@ -18,3 +19,8 @@ func btn_pressed(btn: TouchScreenButton):
 func btn_released(btn: TouchScreenButton):
 	return func():
 		btn.modulate = Color("#FFFFFF46")
+
+func _process(delta: float) -> void:
+	if not LevelManager.instance: return
+	if LevelManager.instance.can_player_interact: $Actions/Interact.show()
+	else: $Actions/Interact.hide()

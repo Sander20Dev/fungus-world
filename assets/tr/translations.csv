@@ -18,7 +18,7 @@ UI.PAUSE.VOLUME,Volume,Volumen
 UI.PAUSE.EXIT,Exit,Salir
 UI.MAIN_MENU.START,Start,Comenzar
 UI.MAIN_MENU.SETTINGS,Settings,Ajustes
-UI.MAIN_MENU.ACTIVE_MOBILE_MODE,Active mobile mode,Modo móvil activo
+UI.MAIN_MENU.ACTIVE_MOBILE_MODE,Active mobile mode,Activar modo móvil
 UI.MAIN_MENU.DISABLE_MOBILE_MODE,Disable mobile mode,Desactivar modo móvil
 UI.MAIN_MENU.QUIT,Quit,Salir
 UI.SETTINGS.VIDEO,Video,Video
@@ -34,6 +34,7 @@ UI.SETTINGS.LANGUAGE.CHANGE,Change,Cambiar
 UI.SETTINGS.LANGUAGE.ENGLISH,English,Inglés
 UI.SETTINGS.LANGUAGE.SPANISH,Spanish,Español
 UI.SETTINGS.LANGUAGE.RESTART,Please restart the game for the change to take effect.,Por favor reinicia el juego para que el cambio tenga efecto.
+GUIDE.PRESS_E_TO_INTERACT,Press [img]res://assets/sprites/keys/e.png[/img] to interact,Presiona [img]res://assets/sprites/keys/e.png[/img] para interactuar
 GUIDE_MESSAGES.A_D,Press [img]res://assets/sprites/keys/a.png[/img] or [img]res://assets/sprites/keys/d.png[/img] to walk,Presiona [img]res://assets/sprites/keys/a.png[/img] o [img]res://assets/sprites/keys/d.png[/img] para caminar
 GUIDE_MESSAGES.W,Press [img]res://assets/sprites/keys/w.png[/img] to jump,Presiona [img]res://assets/sprites/keys/w.png[/img] para saltar
 GUIDE_MESSAGES.S,[center]Press [img]res://assets/sprites/keys/s.png[/img] to sneak[/center],[center]Presiona [img]res://assets/sprites/keys/s.png[/img] para agacharte[/center]

@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://towmd2nywuul"]
+
+[ext_resource type="Script" path="res://utilities/actives/timed_button.gd" id="1_10a70"]
+[ext_resource type="Texture2D" uid="uid://whsk1rkd5alg" path="res://assets/sprites/utilities/timed_button.png" id="1_lfg7j"]
+[ext_resource type="AudioStream" uid="uid://cl7hx1fk88jyt" path="res://assets/audios/sfx/button_pressed.wav" id="3_dp4o3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wr26d"]
+size = Vector2(32, 24)
+
+[node name="TimedButton" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_10a70")
+
+[node name="TimedButton" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+scale = Vector2(2, 2)
+texture = ExtResource("1_lfg7j")
+hframes = 2
+
+[node name="TimeLabel" type="Label" parent="."]
+visible = false
+offset_left = -32.0
+offset_top = -65.0
+offset_right = 32.0
+offset_bottom = -26.0
+pivot_offset = Vector2(32, 20)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "1s"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ButtonPressedSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_dp4o3")
+volume_db = 6.0
+bus = &"Sfx"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_wr26d")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

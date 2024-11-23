@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ditawypuxmnay"]
+[gd_scene load_steps=9 format=3 uid="uid://ditawypuxmnay"]
 
 [ext_resource type="Script" path="res://scenes/game/menus/pause_menu.gd" id="1_8imfs"]
 [ext_resource type="Texture2D" uid="uid://bcno48rp6yvns" path="res://assets/sprites/ui/utils/button/normal.png" id="1_j52cy"]
+[ext_resource type="Script" path="res://scenes/game/menus/pause_controller.gd" id="2_w1gh1"]
 [ext_resource type="PackedScene" uid="uid://cds0dq5tddlky" path="res://ui_utils/audio_controllers/master_slider.tscn" id="3_5redp"]
 [ext_resource type="PackedScene" uid="uid://dej0jpt8wbne6" path="res://ui_utils/audio_controllers/music_slider.tscn" id="4_fyviw"]
 [ext_resource type="PackedScene" uid="uid://slevo34hm4ii" path="res://ui_utils/audio_controllers/sfx_slider.tscn" id="5_0cxe8"]
@@ -23,6 +24,10 @@ texture_margin_bottom = 8.0
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 2
 script = ExtResource("1_8imfs")
+
+[node name="Node" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("2_w1gh1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15

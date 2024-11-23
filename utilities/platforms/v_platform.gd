@@ -83,17 +83,26 @@ func _set_markers():
 			marker.position.y = -(min_v+i)*64
 			markers.add_child(marker)
 
+var delay_is_to_activate = true
 func use_button():
 	if delay > 0:
 		disabled = true
+		delay_is_to_activate = true
 		delay_timer.wait_time = delay
 		delay_timer.start()
 	else:
 		disabled = false
-
+func button_disable():
+	if delay > 0:
+		disabled = false
+		delay_is_to_activate = false
+		delay_timer.wait_time = delay
+		delay_timer.start()
+	else:
+		disabled = true
 
 func _on_delay_timeout() -> void:
-	disabled = false
+	disabled = not delay_is_to_activate
 
 
 func _on_engine_active_audio_finished() -> void:

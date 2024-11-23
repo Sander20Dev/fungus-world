@@ -1,18 +1,144 @@
-[gd_scene load_steps=4 format=4 uid="uid://c0o8qt2f2ca60"]
+[gd_scene load_steps=11 format=4 uid="uid://c0o8qt2f2ca60"]
 
 [ext_resource type="Script" path="res://scenes/playable-levels/scripts/level.gd" id="1_c7vgc"]
 [ext_resource type="PackedScene" uid="uid://fccqth8tft4l" path="res://scenes/tools/terrain.tscn" id="2_rb0e1"]
 [ext_resource type="PackedScene" uid="uid://sf7aoungqooq" path="res://scenes/tools/player_spawn.tscn" id="3_ye5b4"]
+[ext_resource type="PackedScene" uid="uid://d8l4j2yaedsg" path="res://utilities/killers/spike.tscn" id="5_tst7n"]
+[ext_resource type="PackedScene" uid="uid://cjpbe5xedbc4b" path="res://utilities/platforms/fading_block.tscn" id="5_tutlo"]
+[ext_resource type="PackedScene" uid="uid://dyqriwugybd8" path="res://utilities/spring.tscn" id="6_3l45d"]
+[ext_resource type="PackedScene" uid="uid://falnw41lsu7e" path="res://utilities/scape_options/door.tscn" id="6_knia3"]
+[ext_resource type="PackedScene" uid="uid://d1ym5poajs1qg" path="res://utilities/killers/detector_killer.tscn" id="7_aq27p"]
+[ext_resource type="PackedScene" uid="uid://bgom2ohnp8qvy" path="res://utilities/actives/key.tscn" id="7_fm0aa"]
+[ext_resource type="PackedScene" uid="uid://beyaj2jgdut5n" path="res://utilities/platforms/v_platform.tscn" id="9_mgkxx"]
 
 [node name="Lvl1" type="Node2D" node_paths=PackedStringArray("player_spawn_node")]
 script = ExtResource("1_c7vgc")
 player_spawn_node = NodePath("PlayerSpawn")
 world = 4
+size = Vector2(96, 108)
 
 [node name="Colorize" type="Node2D" parent="."]
 modulate = Color(0.466667, 0.270588, 0.827451, 1)
 
 [node name="Terrain" parent="Colorize" instance=ExtResource("2_rb0e1")]
-tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAABAAIAAAAAAAEAAAABAAMAAAABAAEAAAABAAQAAAAAAAEAAAABAAUAAAAAAAIAAAACAAMAAAACAAMAAAADAAMAAAADAAEAAAADAAIAAAAAAAEAAAADAAEAAAAAAAAAAAADAAQAAAAAAAEAAAADAAUAAAAAAAIAAAAFAAEAAAABAAAAAAAFAAIAAAAAAAEAAAAFAAMAAAAAAAEAAAAFAAQAAAAAAAEAAAAFAAUAAAABAAIAAAAGAAUAAAACAAMAAAAHAAUAAAADAAIAAAAHAAQAAAAAAAEAAAAHAAMAAAAAAAEAAAAHAAIAAAAAAAEAAAAHAAEAAAADAAAAAAAGAAEAAAACAAMAAAAJAAEAAAAAAAAAAAAJAAIAAAAAAAEAAAAJAAMAAAAAAAEAAAAJAAQAAAAAAAEAAAAJAAUAAAABAAIAAAAKAAUAAAACAAMAAAALAAUAAAADAAMAAAANAAEAAAABAAAAAAANAAIAAAAAAAEAAAANAAMAAAABAAEAAAANAAQAAAAAAAEAAAANAAUAAAAAAAIAAAAOAAEAAAACAAMAAAAPAAEAAAADAAAAAAAPAAIAAAAAAAEAAAAPAAMAAAADAAEAAAAPAAQAAAAAAAEAAAAPAAUAAAAAAAIAAAAOAAMAAAACAAMAAAA=")
+tile_map_data = PackedByteArray("AAARAAsAAAADAAMAAAAQAAsAAAACAAMAAAAPAAsAAAACAAMAAAAOAAsAAAACAAMAAAANAAsAAAACAAMAAAAMAAsAAAACAAMAAAALAAsAAAACAAMAAAAKAAsAAAACAAMAAAAJAAsAAAACAAMAAAAIAAsAAAACAAMAAAAHAAsAAAACAAMAAAAGAAsAAAACAAMAAAAFAAsAAAACAAMAAAAEAAsAAAACAAMAAAADAAsAAAACAAMAAAACAAsAAAACAAMAAAABAAsAAAACAAMAAAAAAAsAAAABAAMAAAAHADMAAAADAAMAAAAGADMAAAACAAMAAAAFADMAAAACAAMAAAAEADMAAAACAAMAAAADADMAAAACAAMAAAACADMAAAACAAMAAAABADMAAAACAAMAAAAAADMAAAABAAMAAAAPADEAAAADAAMAAAAOADEAAAACAAMAAAANADEAAAACAAMAAAAMADEAAAABAAMAAAAZAC4AAAADAAMAAAAYAC4AAAABAAMAAAAXAC8AAAADAAMAAAAWAC8AAAABAAMAAAAVADAAAAADAAMAAAAUADAAAAABAAMAAAAiACwAAAACAAMAAAAhACwAAAACAAMAAAAgACwAAAACAAMAAAAfACwAAAACAAMAAAAeACwAAAACAAMAAAAdACwAAAABAAMAAAAgACYAAAABAAMAAAAhACYAAAACAAMAAAAiACYAAAADAAMAAAACACMAAAACAAMAAAADACMAAAACAAMAAAAEACMAAAACAAMAAAAFACMAAAACAAMAAAAGACMAAAACAAMAAAAHACMAAAADAAMAAAABACMAAAACAAMAAAAAACMAAAABAAMAAAAlACwAAAADAAMAAAAkACwAAAACAAMAAAAjACwAAAACAAMAAAALABwAAAADAAMAAAAKABwAAAACAAMAAAAJABwAAAACAAMAAAAIABwAAAACAAMAAAAHABwAAAACAAMAAAAGABwAAAACAAMAAAAFABwAAAACAAMAAAAEABwAAAABAAMAAAAqABQAAAABAAAAAAApABUAAAABAAAAAAAoABYAAAABAAAAAAAnABcAAAABAAAAAAAmABgAAAABAAAAAAAlABkAAAABAAAAAAAkABoAAAABAAAAAAAjABsAAAABAAAAAAAiABwAAAABAAMAAAAqABUAAAADAAIAAAApABYAAAADAAIAAAAoABcAAAADAAIAAAAnABgAAAADAAIAAAAmABkAAAADAAIAAAAlABoAAAADAAIAAAAkABsAAAADAAIAAAAjABwAAAADAAIAAAArABQAAAADAAMAAAAcABIAAAABAAAAAAAdABIAAAACAAEAAAAeABIAAAADAAEAAAAiABIAAAABAAEAAAAjABIAAAACAAEAAAAkABIAAAADAAAAAAAjABEAAAADAAAAAAAiABEAAAABAAEAAAAeABEAAAADAAEAAAAdABEAAAABAAAAAAAiABAAAAADAAAAAAAhABAAAAACAAIAAAAgABAAAAACAAIAAAAfABAAAAACAAIAAAAeABAAAAABAAAAAAAhAA8AAAADAAAAAAAgAA8AAAACAAEAAAAfAA8AAAABAAAAAAAgAA4AAAAAAAAAAAAdABMAAAACAAIAAAAeABMAAAADAAEAAAAjABMAAAACAAEAAAAiABMAAAABAAEAAAAeABQAAAABAAIAAAAiABQAAAABAAEAAAAiABYAAAAAAAIAAAAiABUAAAABAAEAAAAjABUAAAADAAIAAAAjABQAAAACAAEAAAAkABQAAAADAAIAAAAkABMAAAADAAEAAAAcABMAAAABAAIAAAAfABQAAAADAAMAAAA=")
+
+[node name="FadingBlock" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1120, 2976)
+
+[node name="FadingBlock2" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1888, 2400)
+
+[node name="FadingBlock3" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1824, 2400)
+
+[node name="FadingBlock4" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1760, 2336)
+
+[node name="FadingBlock5" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1696, 2336)
+
+[node name="FadingBlock6" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1632, 2336)
+
+[node name="FadingBlock7" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1568, 2272)
+
+[node name="FadingBlock8" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1376, 2272)
+
+[node name="FadingBlock9" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1248, 2144)
+
+[node name="FadingBlock10" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1184, 2272)
+
+[node name="FadingBlock11" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1120, 2400)
+
+[node name="FadingBlock12" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(928, 2400)
+
+[node name="FadingBlock13" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(736, 2272)
+
+[node name="FadingBlock14" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(992, 1824)
+
+[node name="FadingBlock15" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1312, 1824)
+
+[node name="FadingBlock16" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1632, 1824)
+
+[node name="FadingBlock17" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1952, 1824)
+
+[node name="FadingBlock18" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(2528, 1184)
+
+[node name="FadingBlock19" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1696, 800)
+
+[node name="FadingBlock29" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1760, 800)
+
+[node name="FadingBlock22" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1760, 1456)
+
+[node name="FadingBlock23" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1824, 1456)
+
+[node name="FadingBlock24" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1888, 1456)
+
+[node name="FadingBlock25" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1952, 1456)
+
+[node name="FadingBlock26" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(2016, 1456)
+
+[node name="FadingBlock27" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(2080, 1456)
+
+[node name="FadingBlock28" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(2144, 1456)
+
+[node name="FadingBlock20" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1440, 736)
+
+[node name="FadingBlock21" parent="Colorize" instance=ExtResource("5_tutlo")]
+position = Vector2(1280, 608)
+
+[node name="Spike" parent="Colorize" instance=ExtResource("5_tst7n")]
+position = Vector2(1952, 2816)
+
+[node name="Spike2" parent="Colorize" instance=ExtResource("5_tst7n")]
+position = Vector2(2016, 2816)
+
+[node name="Spike3" parent="Colorize" instance=ExtResource("5_tst7n")]
+position = Vector2(2080, 2816)
+
+[node name="Spike4" parent="Colorize" instance=ExtResource("5_tst7n")]
+position = Vector2(2208, 2816)
+
+[node name="Spring" parent="Colorize" instance=ExtResource("6_3l45d")]
+position = Vector2(2336, 2784)
+disabled = false
+
+[node name="DetectorKiller" parent="Colorize" instance=ExtResource("7_aq27p")]
+position = Vector2(0, 3456)
+
+[node name="VPlatform" parent="Colorize" instance=ExtResource("9_mgkxx")]
+position = Vector2(128, 2208)
+max_v = 5
+disabled = false
+
+[node name="Door" parent="." instance=ExtResource("6_knia3")]
+position = Vector2(320, 640)
+
+[node name="Key" parent="." instance=ExtResource("7_fm0aa")]
+position = Vector2(2080, 1184)
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("3_ye5b4")]
+position = Vector2(128, 3072)

@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcjg33hqrmgy4"]
+
+[ext_resource type="Script" path="res://scenes/playable-levels/main_layer.gd" id="1_73gv3"]
+[ext_resource type="Texture2D" uid="uid://cqp6y8knihy01" path="res://assets/sprites/ui/pause_menu/button_normal.png" id="1_m7dls"]
+[ext_resource type="Texture2D" uid="uid://cuh17hfsxmmer" path="res://assets/sprites/ui/pause_menu/button_pressed.png" id="2_ti63u"]
+[ext_resource type="Texture2D" uid="uid://y8d62wvn4hlr" path="res://assets/sprites/ui/items/item_placeholder.png" id="4_1svgt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r4hw7"]
+texture = ExtResource("4_1svgt")
+
+[node name="MainLayer" type="CanvasLayer"]
+script = ExtResource("1_73gv3")
+
+[node name="PauseButton" type="TextureButton" parent="."]
+modulate = Color(1, 1, 1, 0.501961)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_top = 16.0
+offset_right = 32.0
+offset_bottom = 80.0
+grow_horizontal = 2
+texture_normal = ExtResource("1_m7dls")
+texture_pressed = ExtResource("2_ti63u")
+stretch_mode = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 64.0
+offset_top = 48.0
+offset_right = 272.0
+offset_bottom = 256.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_r4hw7")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ItemTexture" type="TextureRect" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause"]

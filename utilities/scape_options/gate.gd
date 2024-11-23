@@ -39,3 +39,7 @@ func use_button():
 	var tween = create_tween()
 	var last_pos = position
 	tween.tween_property(self, "position", last_pos - Vector2(0, height*64), 1)
+func button_disable():
+	var tween = create_tween()
+	var last_pos = position
+	tween.tween_property(self, "position", last_pos + Vector2(0, height*64), 1)

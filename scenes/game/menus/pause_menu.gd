@@ -14,12 +14,6 @@ func hide_pause():
 	hide()
 	get_tree().paused = false
 
-#func _input(ev):
-	#if ev.is_action_just_pressed("pause"):
-		#print("resume")
-		#_on_resume()
-	#pass
-
 func _on_resume() -> void:
 	hide_pause()
 

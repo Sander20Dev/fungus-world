@@ -13,13 +13,18 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if not door or used: return
+	if used: return
+	
+	LevelManager.instance.fungy.collect_item(Global.ITEMS_NAME.KEY)
+	#if not door or used: return
 	used = true
 	key_catch.play()
-	door.open_the_door()
+	#door.open_the_door()
 	timer_kill.start()
 	hide()
+	pass
 
 
 func _on_timer_timeout() -> void:
 	queue_free()
+	pass

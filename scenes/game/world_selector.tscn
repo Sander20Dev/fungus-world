@@ -104,7 +104,6 @@ stretch_mode = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-disabled = true
 texture_normal = ExtResource("11_ctsb2")
 texture_pressed = ExtResource("12_k22oh")
 texture_disabled = ExtResource("7_k6o6w")

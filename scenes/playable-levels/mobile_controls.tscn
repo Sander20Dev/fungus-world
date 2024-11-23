@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://chyfqwlaa1un4"]
+[gd_scene load_steps=7 format=3 uid="uid://chyfqwlaa1un4"]
 
 [ext_resource type="Script" path="res://scenes/playable-levels/mobile_controls.gd" id="1_56kdk"]
 [ext_resource type="Texture2D" uid="uid://5nfeb45l75v2" path="res://assets/sprites/ui/mobile_controls/left.png" id="1_swvx3"]
 [ext_resource type="Texture2D" uid="uid://cxvj8pmuayugk" path="res://assets/sprites/ui/mobile_controls/right.png" id="2_ce0wc"]
 [ext_resource type="Texture2D" uid="uid://c6d2ju7133ua7" path="res://assets/sprites/ui/mobile_controls/jump.png" id="3_rk8qp"]
 [ext_resource type="Texture2D" uid="uid://ksj4lbyo47w6" path="res://assets/sprites/ui/mobile_controls/sneak.png" id="4_hr8kl"]
+[ext_resource type="Texture2D" uid="uid://d4ac35ltqrcs5" path="res://assets/sprites/ui/mobile_controls/interact.png" id="6_r7o7s"]
 
 [node name="MobileControls" type="CanvasLayer"]
 script = ExtResource("1_56kdk")
@@ -55,3 +56,10 @@ position = Vector2(-184, -184)
 scale = Vector2(6, 6)
 texture_normal = ExtResource("4_hr8kl")
 action = "p1_sneak"
+
+[node name="Interact" type="TouchScreenButton" parent="Actions"]
+visible = false
+position = Vector2(-920, -408)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("6_r7o7s")
+action = "p1_interact"

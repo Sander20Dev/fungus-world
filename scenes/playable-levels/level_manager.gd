@@ -9,8 +9,6 @@ static var instance: LevelManager
 @onready var track_1: AudioStreamPlayer = $"../Track1"
 @onready var mobile_controls: CanvasLayer = $"../MobileControls"
 
-@export var all_levels: Array[PackedScene] = []
-
 var current_level_node: Node2D
 var _new_level: Node2D
 var transition_loaded = false
@@ -113,13 +111,9 @@ func _on_transition_animation_end(anim_name: StringName) -> void:
 		if current_level_node:
 			current_level_node.queue_free()
 		Global.update_color()
+		fungy.reset()
 		_load_new_level()
 	else:
 		_end_transition()
 
-func _process(_delta):
-	if is_changing: return
-	
-	#print($"../PauseMenu".is_paused)
-	if Input.is_action_just_pressed("pause") and not $"../PauseMenu".is_paused:
-		$"../PauseMenu".show_pause()
+var can_player_interact = false

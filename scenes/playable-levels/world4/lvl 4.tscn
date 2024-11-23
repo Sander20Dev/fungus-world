@@ -1,0 +1,471 @@
+[gd_scene load_steps=16 format=4 uid="uid://ckprsob5beke"]
+
+[ext_resource type="Script" path="res://scenes/playable-levels/scripts/level.gd" id="1_5i0nd"]
+[ext_resource type="PackedScene" uid="uid://fccqth8tft4l" path="res://scenes/tools/terrain.tscn" id="2_ekep5"]
+[ext_resource type="PackedScene" uid="uid://cjpbe5xedbc4b" path="res://utilities/platforms/fading_block.tscn" id="3_ijwfq"]
+[ext_resource type="PackedScene" uid="uid://ccylx4ugf81hn" path="res://utilities/killers/lazer/flashing_lazer.tscn" id="4_pg3gi"]
+[ext_resource type="PackedScene" uid="uid://dyqriwugybd8" path="res://utilities/spring.tscn" id="5_yc5dk"]
+[ext_resource type="PackedScene" uid="uid://d8l4j2yaedsg" path="res://utilities/killers/spike.tscn" id="6_spkjw"]
+[ext_resource type="PackedScene" uid="uid://falnw41lsu7e" path="res://utilities/scape_options/door.tscn" id="7_kebbw"]
+[ext_resource type="PackedScene" uid="uid://bww65soi4g8ky" path="res://utilities/killers/falling_spike.tscn" id="7_pbapk"]
+[ext_resource type="PackedScene" uid="uid://ul868t65jwwo" path="res://utilities/killers/lazer/active_lazer.tscn" id="8_wtg8x"]
+[ext_resource type="PackedScene" uid="uid://bgom2ohnp8qvy" path="res://utilities/actives/key.tscn" id="8_xjjdb"]
+[ext_resource type="PackedScene" uid="uid://sf7aoungqooq" path="res://scenes/tools/player_spawn.tscn" id="9_fb7md"]
+[ext_resource type="PackedScene" uid="uid://towmd2nywuul" path="res://utilities/actives/timed_button.tscn" id="9_pmc4e"]
+[ext_resource type="PackedScene" uid="uid://beyaj2jgdut5n" path="res://utilities/platforms/v_platform.tscn" id="10_os3vn"]
+[ext_resource type="PackedScene" uid="uid://c1ruoyeuodqw4" path="res://utilities/actives/button.tscn" id="11_fncbl"]
+[ext_resource type="PackedScene" uid="uid://d1ym5poajs1qg" path="res://utilities/killers/detector_killer.tscn" id="16_11e2d"]
+
+[node name="Lvl2" type="Node2D" node_paths=PackedStringArray("player_spawn_node")]
+script = ExtResource("1_5i0nd")
+player_spawn_node = NodePath("PlayerSpawn")
+world = 4
+origin = Vector2(0, 18)
+size = Vector2(51, 32)
+
+[node name="Colorize" type="Node2D" parent="."]
+modulate = Color(0.466667, 0.270588, 0.827451, 1)
+
+[node name="Terrain" parent="Colorize" instance=ExtResource("2_ekep5")]
+tile_map_data = PackedByteArray("AAAAADEAAAABAAMAAAABADEAAAACAAMAAAACADEAAAACAAMAAAADADEAAAADAAMAAAAKADEAAAABAAMAAAALADEAAAACAAMAAAAMADEAAAACAAMAAAANADEAAAACAAMAAAAOADEAAAACAAMAAAAPADEAAAADAAMAAAARADEAAAAAAAMAAAATADEAAAABAAMAAAAUADEAAAACAAMAAAAVADEAAAACAAMAAAAWADEAAAADAAMAAAAYADEAAAAAAAMAAAAaADEAAAABAAMAAAAbADEAAAACAAMAAAAcADEAAAACAAMAAAAdADEAAAADAAMAAAAfADEAAAAAAAMAAAAhADEAAAABAAMAAAAiADEAAAACAAMAAAAjADEAAAACAAMAAAAkADEAAAADAAMAAAAmADEAAAAAAAMAAAAoADEAAAABAAMAAAApADEAAAACAAMAAAAqADEAAAACAAMAAAArADEAAAACAAMAAAAsADAAAAABAAAAAAAtAC8AAAABAAAAAAAsADEAAAADAAIAAAAtADAAAAADAAIAAAAuAC8AAAADAAIAAAAuAC4AAAABAAAAAAAvAC4AAAACAAMAAAAwAC4AAAACAAMAAAAxAC4AAAACAAMAAAAyAC4AAAADAAIAAAABACcAAAABAAIAAAADACgAAAABAAIAAAAFACkAAAABAAIAAAAHACoAAAABAAIAAAAJACsAAAABAAIAAAARACsAAAADAAEAAAARACwAAAAAAAIAAAAYACsAAAAAAAEAAAAYACwAAAAAAAIAAAAfACsAAAAAAAEAAAAfACwAAAAAAAIAAAAmACsAAAAAAAEAAAAmACwAAAAAAAIAAAAyACcAAAAAAAEAAAAyACgAAAAAAAEAAAAyACkAAAAAAAEAAAAyACoAAAAAAAEAAAAyACsAAAAAAAEAAAAyACwAAAAAAAEAAAACACcAAAACAAMAAAADACcAAAADAAAAAAAEACgAAAACAAMAAAAFACgAAAADAAAAAAAGACkAAAACAAMAAAAHACkAAAADAAAAAAAIACoAAAACAAMAAAAJACoAAAADAAAAAAAKACsAAAACAAMAAAALACsAAAACAAMAAAAMACsAAAACAAMAAAANACsAAAACAAMAAAAOACsAAAACAAMAAAAPACsAAAACAAMAAAAQACsAAAACAAMAAAARACoAAAAAAAAAAAATACsAAAAAAAMAAAAWACsAAAAAAAMAAAAYACoAAAAAAAAAAAAaACsAAAAAAAMAAAAdACsAAAAAAAMAAAAfACoAAAAAAAAAAAAhACsAAAAAAAMAAAAkACsAAAAAAAMAAAAmACoAAAAAAAAAAAAuACkAAAABAAMAAAAvACkAAAADAAMAAAD//xMAAAAAAAEAAAD//xQAAAAAAAEAAAD//xUAAAAAAAEAAAD//xYAAAAAAAEAAAD//xcAAAAAAAEAAAD//xgAAAAAAAEAAAD//xkAAAAAAAEAAAD//xoAAAAAAAEAAAD//xsAAAABAAEAAAD//xwAAAAAAAEAAAD//x0AAAAAAAEAAAD//x4AAAAAAAEAAAD//x8AAAAAAAEAAAD//yAAAAAAAAEAAAD//yEAAAAAAAEAAAD//yIAAAAAAAEAAAD//yMAAAAAAAEAAAD//yQAAAAAAAEAAAD//yUAAAAAAAEAAAAGACIAAAABAAIAAAAHABcAAAAAAAIAAAAIACMAAAABAAIAAAAKACQAAAABAAIAAAANACEAAAAAAAEAAAANACIAAAAAAAEAAAANACMAAAAAAAEAAAANACQAAAACAAIAAAAQACQAAAACAAIAAAARACMAAAACAAEAAAARACQAAAACAAEAAAARACUAAAAAAAIAAAASACQAAAACAAIAAAAXACQAAAACAAIAAAAYACMAAAACAAEAAAAYACQAAAACAAEAAAAYACUAAAAAAAIAAAAZACQAAAACAAIAAAAeACQAAAACAAIAAAAfACMAAAACAAEAAAAfACQAAAACAAEAAAAfACUAAAAAAAIAAAAgACQAAAACAAIAAAAlACQAAAACAAIAAAAmACMAAAACAAEAAAAmACQAAAACAAEAAAAmACUAAAAAAAIAAAAnACQAAAACAAIAAAArABwAAAAAAAIAAAArACQAAAABAAIAAAAyABMAAAAAAAEAAAAyABQAAAAAAAEAAAAyABUAAAAAAAEAAAAyABYAAAAAAAEAAAAyABcAAAAAAAEAAAAyABgAAAAAAAEAAAAyABkAAAAAAAEAAAAyABoAAAAAAAEAAAAyABsAAAAAAAEAAAAyABwAAAAAAAEAAAAyAB0AAAAAAAEAAAAyAB4AAAAAAAEAAAAyAB8AAAAAAAEAAAAyACAAAAAAAAEAAAAyACEAAAAAAAEAAAAyACIAAAAAAAEAAAAyACMAAAAAAAEAAAAyACQAAAADAAEAAAAyACUAAAAAAAEAAAD//xIAAAABAAAAAAAAABIAAAACAAMAAAAAABsAAAACAAMAAAABABIAAAACAAMAAAABABsAAAACAAMAAAACABIAAAACAAMAAAACABsAAAACAAMAAAADABIAAAACAAMAAAADABsAAAACAAMAAAAEABIAAAACAAMAAAAEABsAAAACAAMAAAAEACEAAAABAAMAAAAFABIAAAACAAMAAAAFABsAAAACAAMAAAAFACEAAAACAAMAAAAGABIAAAACAAMAAAAGABsAAAACAAMAAAAGACEAAAADAAAAAAAHABIAAAACAAMAAAAHABYAAAAAAAAAAAAHABsAAAACAAMAAAAHACIAAAACAAMAAAAIABIAAAACAAMAAAAIABsAAAACAAMAAAAIACIAAAADAAAAAAAJABIAAAACAAMAAAAJABsAAAACAAMAAAAJACMAAAACAAMAAAAKABIAAAACAAMAAAAKABsAAAACAAMAAAAKACMAAAADAAAAAAALABIAAAACAAMAAAALABsAAAACAAMAAAALACQAAAACAAMAAAAMABIAAAACAAMAAAAMABsAAAACAAMAAAAMACQAAAACAAMAAAANABIAAAACAAMAAAANABsAAAACAAMAAAANACAAAAAAAAAAAAAOABIAAAACAAMAAAAOABsAAAACAAMAAAAOACQAAAACAAMAAAAPABIAAAACAAMAAAAPABsAAAACAAMAAAAPACQAAAACAAMAAAAQABIAAAACAAMAAAAQABsAAAACAAMAAAAQACMAAAABAAAAAAARABIAAAACAAMAAAARABsAAAACAAMAAAARACIAAAAAAAAAAAASABIAAAACAAMAAAASABsAAAACAAMAAAASACMAAAADAAAAAAATABIAAAACAAMAAAATABsAAAACAAMAAAATACQAAAADAAMAAAAUABIAAAACAAMAAAAUABsAAAACAAMAAAAVABIAAAACAAMAAAAVABsAAAACAAMAAAAWABIAAAACAAMAAAAWABsAAAACAAMAAAAWACQAAAABAAMAAAAXABIAAAACAAMAAAAXABsAAAACAAMAAAAXACMAAAABAAAAAAAYABIAAAACAAMAAAAYABsAAAACAAMAAAAYACIAAAAAAAAAAAAZABIAAAACAAMAAAAZABsAAAACAAMAAAAZACMAAAADAAAAAAAaABIAAAACAAMAAAAaABsAAAACAAMAAAAaACQAAAADAAMAAAAbABIAAAACAAMAAAAbABsAAAACAAMAAAAcABIAAAACAAMAAAAcABsAAAACAAMAAAAdABIAAAACAAMAAAAdABsAAAACAAMAAAAdACQAAAABAAMAAAAeABIAAAACAAMAAAAeABsAAAACAAMAAAAeACMAAAABAAAAAAAfABIAAAACAAMAAAAfABsAAAACAAMAAAAfACIAAAAAAAAAAAAgABIAAAACAAMAAAAgABsAAAACAAMAAAAgACMAAAADAAAAAAAhABIAAAACAAMAAAAhABsAAAACAAMAAAAhACQAAAADAAMAAAAiABIAAAACAAMAAAAiABsAAAACAAMAAAAjABIAAAACAAMAAAAjABsAAAACAAMAAAAkABIAAAACAAMAAAAkABsAAAACAAMAAAAkACQAAAABAAMAAAAlABIAAAACAAMAAAAlABsAAAACAAMAAAAlACMAAAABAAAAAAAmABIAAAACAAMAAAAmABsAAAACAAMAAAAmACIAAAAAAAAAAAAnABIAAAACAAMAAAAnABsAAAACAAMAAAAnACMAAAADAAAAAAAoABIAAAACAAMAAAAoABsAAAACAAMAAAAoACQAAAADAAMAAAApABIAAAACAAMAAAApABsAAAACAAMAAAAqABIAAAACAAMAAAAqABsAAAACAAMAAAArABIAAAACAAMAAAArABsAAAACAAAAAAArACMAAAAAAAAAAAAsABIAAAACAAMAAAAsABsAAAADAAMAAAAsACQAAAACAAMAAAAtABIAAAACAAMAAAAtACQAAAACAAMAAAAuABIAAAACAAMAAAAuACQAAAACAAMAAAAvABIAAAACAAMAAAAvACQAAAACAAMAAAAwABIAAAACAAMAAAAwACQAAAACAAMAAAAxABIAAAACAAMAAAAxACQAAAACAAMAAAAyABIAAAADAAAAAAAyAC0AAAAAAAEAAAAyACYAAAAAAAEAAAD//yYAAAABAAIAAAAAACYAAAACAAMAAAABACYAAAADAAAAAAA=")
+
+[node name="FadingBlock" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(416, 3040)
+
+[node name="FadingBlock2" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(480, 3040)
+
+[node name="FadingBlock3" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(2656, 2784)
+
+[node name="FadingBlock4" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(2784, 2784)
+
+[node name="FadingBlock5" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(2784, 1504)
+
+[node name="FadingBlock6" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(2720, 1504)
+
+[node name="FadingBlock7" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(2656, 1504)
+
+[node name="FadingBlock8" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(2592, 1504)
+
+[node name="FadingBlock9" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(2528, 1504)
+
+[node name="FadingBlock10" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(2464, 1504)
+
+[node name="FadingBlock11" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(2400, 1504)
+
+[node name="FadingBlock13" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(2272, 1504)
+
+[node name="FadingBlock14" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(2208, 1504)
+
+[node name="FadingBlock15" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(2144, 1504)
+
+[node name="FadingBlock16" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(2080, 1504)
+
+[node name="FadingBlock17" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(2016, 1504)
+
+[node name="FadingBlock18" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(1952, 1504)
+
+[node name="FadingBlock19" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(1888, 1504)
+
+[node name="FadingBlock21" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(1760, 1504)
+
+[node name="FadingBlock22" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(1696, 1504)
+
+[node name="FadingBlock23" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(1632, 1504)
+
+[node name="FadingBlock24" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(1568, 1504)
+
+[node name="FadingBlock25" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(1504, 1504)
+
+[node name="FadingBlock26" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(1440, 1504)
+
+[node name="FadingBlock27" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(1376, 1504)
+
+[node name="FadingBlock28" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(1312, 1504)
+
+[node name="FadingBlock29" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(1248, 1504)
+
+[node name="FadingBlock30" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(1184, 1504)
+
+[node name="FadingBlock31" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(1120, 1504)
+
+[node name="FadingBlock32" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(1056, 1504)
+
+[node name="FadingBlock33" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(992, 1504)
+
+[node name="FadingBlock34" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(928, 1504)
+
+[node name="FadingBlock35" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(864, 1504)
+
+[node name="FadingBlock36" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(800, 1504)
+
+[node name="FadingBlock37" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(736, 1504)
+
+[node name="FadingBlock38" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(672, 1504)
+
+[node name="FadingBlock39" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(608, 1504)
+
+[node name="FadingBlock40" parent="Colorize" instance=ExtResource("3_ijwfq")]
+position = Vector2(544, 1504)
+
+[node name="FlashingLazer" parent="Colorize" instance=ExtResource("4_pg3gi")]
+position = Vector2(1120, 3008)
+time = 0.8
+lazers_count = 4
+
+[node name="FlashingLazer2" parent="Colorize" instance=ExtResource("4_pg3gi")]
+position = Vector2(1568, 3008)
+time = 0.8
+lazers_count = 4
+
+[node name="FlashingLazer3" parent="Colorize" instance=ExtResource("4_pg3gi")]
+position = Vector2(2016, 3008)
+time = 0.8
+lazers_count = 4
+
+[node name="FlashingLazer4" parent="Colorize" instance=ExtResource("4_pg3gi")]
+position = Vector2(2464, 3008)
+time = 0.8
+lazers_count = 4
+
+[node name="FlashingLazer5" parent="Colorize" instance=ExtResource("4_pg3gi")]
+position = Vector2(2464, 2560)
+time = 0.8
+lazers_count = 4
+
+[node name="FlashingLazer6" parent="Colorize" instance=ExtResource("4_pg3gi")]
+position = Vector2(2016, 2560)
+time = 0.8
+lazers_count = 4
+
+[node name="FlashingLazer7" parent="Colorize" instance=ExtResource("4_pg3gi")]
+position = Vector2(1568, 2560)
+time = 0.8
+lazers_count = 4
+
+[node name="FlashingLazer8" parent="Colorize" instance=ExtResource("4_pg3gi")]
+position = Vector2(1120, 2560)
+time = 0.8
+lazers_count = 4
+
+[node name="Spring" parent="Colorize" instance=ExtResource("5_yc5dk")]
+position = Vector2(3168, 2912)
+disabled = false
+
+[node name="Spring2" parent="Colorize" instance=ExtResource("5_yc5dk")]
+position = Vector2(64, 2400)
+disabled = false
+
+[node name="Spring3" parent="Colorize" instance=ExtResource("5_yc5dk")]
+position = Vector2(2336, 1504)
+disabled = false
+
+[node name="Spring4" parent="Colorize" instance=ExtResource("5_yc5dk")]
+position = Vector2(1824, 1504)
+disabled = false
+
+[node name="Spike" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(1120, 2176)
+
+[node name="Spike2" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(1568, 2176)
+
+[node name="Spike3" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(2016, 2176)
+
+[node name="Spike4" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(2464, 2176)
+
+[node name="Spike5" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(800, 2304)
+
+[node name="Spike6" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(2848, 1728)
+
+[node name="Spike7" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(2784, 1728)
+
+[node name="Spike8" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(2720, 1728)
+
+[node name="Spike9" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(2656, 1728)
+
+[node name="Spike10" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(2592, 1728)
+
+[node name="Spike11" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(2528, 1728)
+
+[node name="Spike12" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(2464, 1728)
+
+[node name="Spike13" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(2400, 1728)
+
+[node name="Spike14" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(2336, 1728)
+
+[node name="Spike15" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(2272, 1728)
+
+[node name="Spike16" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(2208, 1728)
+
+[node name="Spike17" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(2144, 1728)
+
+[node name="Spike18" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(2080, 1728)
+
+[node name="Spike19" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(2016, 1728)
+
+[node name="Spike20" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(1952, 1728)
+
+[node name="Spike21" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(1888, 1728)
+
+[node name="Spike22" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(1824, 1728)
+
+[node name="Spike23" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(1760, 1728)
+
+[node name="Spike24" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(1696, 1728)
+
+[node name="Spike25" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(1632, 1728)
+
+[node name="Spike26" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(1568, 1728)
+
+[node name="Spike27" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(1504, 1728)
+
+[node name="Spike28" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(1440, 1728)
+
+[node name="Spike29" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(1376, 1728)
+
+[node name="Spike30" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(1312, 1728)
+
+[node name="Spike31" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(1248, 1728)
+
+[node name="Spike32" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(1184, 1728)
+
+[node name="Spike33" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(1120, 1728)
+
+[node name="Spike34" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(1056, 1728)
+
+[node name="Spike35" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(992, 1728)
+
+[node name="Spike36" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(928, 1728)
+
+[node name="Spike37" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(864, 1728)
+
+[node name="Spike38" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(800, 1728)
+
+[node name="Spike39" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(736, 1728)
+
+[node name="Spike40" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(672, 1728)
+
+[node name="Spike41" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(608, 1728)
+
+[node name="Spike42" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(544, 1728)
+
+[node name="Spike43" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(480, 1728)
+
+[node name="Spike44" parent="Colorize" instance=ExtResource("6_spkjw")]
+position = Vector2(416, 1728)
+
+[node name="FallingSpike" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(1056, 1824)
+
+[node name="FallingSpike2" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(1184, 1824)
+
+[node name="FallingSpike3" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(1504, 1824)
+
+[node name="FallingSpike4" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(1632, 1824)
+
+[node name="FallingSpike5" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(1952, 1824)
+
+[node name="FallingSpike6" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(2080, 1824)
+
+[node name="FallingSpike7" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(2400, 1824)
+
+[node name="FallingSpike8" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(2528, 1824)
+
+[node name="FallingSpike9" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(2720, 1248)
+
+[node name="FallingSpike10" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(2656, 1248)
+
+[node name="FallingSpike11" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(2592, 1248)
+
+[node name="FallingSpike12" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(2528, 1248)
+
+[node name="FallingSpike13" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(2464, 1248)
+
+[node name="FallingSpike17" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(2208, 1248)
+
+[node name="FallingSpike18" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(2144, 1248)
+
+[node name="FallingSpike19" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(2080, 1248)
+
+[node name="FallingSpike20" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(2016, 1248)
+
+[node name="FallingSpike21" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(1952, 1248)
+
+[node name="FallingSpike25" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(1696, 1248)
+
+[node name="FallingSpike26" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(1632, 1248)
+
+[node name="FallingSpike27" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(1568, 1248)
+
+[node name="FallingSpike28" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(1504, 1248)
+
+[node name="FallingSpike29" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(1440, 1248)
+
+[node name="FallingSpike30" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(1376, 1248)
+
+[node name="FallingSpike31" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(1312, 1248)
+
+[node name="FallingSpike32" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(1248, 1248)
+
+[node name="FallingSpike33" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(1184, 1248)
+
+[node name="FallingSpike34" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(1120, 1248)
+
+[node name="FallingSpike35" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(1056, 1248)
+
+[node name="FallingSpike36" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(992, 1248)
+
+[node name="FallingSpike37" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(928, 1248)
+
+[node name="FallingSpike38" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(864, 1248)
+
+[node name="FallingSpike39" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(800, 1248)
+
+[node name="FallingSpike40" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(736, 1248)
+
+[node name="FallingSpike41" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(672, 1248)
+
+[node name="FallingSpike42" parent="Colorize" instance=ExtResource("7_pbapk")]
+position = Vector2(608, 1248)
+
+[node name="ActiveLazer" parent="Colorize" instance=ExtResource("8_wtg8x")]
+position = Vector2(2784, 2048)
+lazers_count = 6
+
+[node name="TimedButton" parent="Colorize" node_paths=PackedStringArray("interactuable_node") instance=ExtResource("9_pmc4e")]
+position = Vector2(896, 2140)
+rotation = 1.57079
+interactuable_node = NodePath("../ActiveLazer")
+active_time = 15
+
+[node name="VPlatform" parent="Colorize" instance=ExtResource("10_os3vn")]
+position = Vector2(3008, 2262)
+max_v = 12
+
+[node name="Button" parent="Colorize" node_paths=PackedStringArray("interactuable_node") instance=ExtResource("11_fncbl")]
+position = Vector2(3200, 2144)
+rotation = -1.57079
+interactuable_node = NodePath("../VPlatform")
+
+[node name="Door" parent="." instance=ExtResource("7_kebbw")]
+position = Vector2(128, 1664)
+
+[node name="Key" parent="." instance=ExtResource("8_xjjdb")]
+position = Vector2(3072, 1280)
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("9_fb7md")]
+position = Vector2(128, 3056)
+
+[node name="DetectorKiller" parent="." instance=ExtResource("16_11e2d")]
+position = Vector2(0, 3456)

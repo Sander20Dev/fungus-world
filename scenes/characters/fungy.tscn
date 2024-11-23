@@ -894,4 +894,8 @@ volume_db = 4.0
 pitch_scale = 1.23
 bus = &"Sfx"
 
+[node name="slot" type="Sprite2D" parent="."]
+position = Vector2(-8, -12)
+scale = Vector2(0.25, 0.25)
+
 [connection signal="reset_player" from="." to="ScapeDetector" method="_reset"]

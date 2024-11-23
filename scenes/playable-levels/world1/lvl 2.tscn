@@ -64,6 +64,14 @@ grow_vertical = 2
 text = "GUIDE_MESSAGES.FIND_KEY"
 horizontal_alignment = 1
 
+[node name="ADText4" type="Label" parent="." groups=["Guides"]]
+offset_left = 944.0
+offset_top = 1104.0
+offset_right = 1568.0
+offset_bottom = 1143.0
+text = "GUIDE_MESSAGES.IF_YOU_SNEAK"
+horizontal_alignment = 1
+
 [node name="Key" parent="." node_paths=PackedStringArray("door") instance=ExtResource("3_lg6b8")]
 position = Vector2(-583, -401)
 door = NodePath("../Door")

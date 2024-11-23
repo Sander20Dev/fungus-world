@@ -14,6 +14,7 @@
 ![World 1](.github/screenshots/w1.png)
 ![World 2](.github/screenshots/w2.png)
 ![World 3](.github/screenshots/w3.png)
+![World 4](.github/screenshots/w4.png)
 
 ---
 
@@ -23,8 +24,7 @@ Welcome to our **FUNGUS_WORLD**, where your goal is to complete a series of leve
 
 - **Genre**: Platformer
 - **Style**: Simple, minimalist design with pixel art aesthetics
-- **Current Levels**: 12 (3 worlds, each consisting of 4 levels)
-- **Total Worlds Planned**: 12 (48 levels)
+- **Current Levels**: 16 (4 worlds, each consisting of 4 levels)
 
 ## Worlds and Mechanics
 

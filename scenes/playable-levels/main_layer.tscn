@@ -21,4 +21,22 @@ texture_normal = ExtResource("1_m7dls")
 texture_pressed = ExtResource("2_ti63u")
 stretch_mode = 4
 
+[node name="Interact" type="RichTextLabel" parent="."]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -213.0
+offset_top = -168.0
+offset_right = 213.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "GUIDE.PRESS_E_TO_INTERACT"
+fit_content = true
+autowrap_mode = 0
+
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause"]
